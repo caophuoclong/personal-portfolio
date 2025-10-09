@@ -1,0 +1,31 @@
+User-agent: *
+Allow: /
+
+# Allow AI hiring tools and crawlers
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+# Important files for AI crawlers
+Allow: /api/profile
+Allow: /api/hiring
+Allow: /api/ai-profile
+Allow: /data.json
+Allow: /assets/statics/FullstackDeveloper_LongTran.pdf
+
+# Sitemap location
+Sitemap: https://portfolio.leondev.me/sitemap.xml
+
+# Cache settings
+Crawl-delay: 1

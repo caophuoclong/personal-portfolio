@@ -1,42 +1,43 @@
 {
   "personal": {
     "name": "Long (Leon) Tran",
-    "title": "Full stack developer",
-    "email": "caophuoclong.se@gmail.com",
+    "title": "Fullstack Web Developer",
+    "email": "contact@leondev.me",
     "phone": "+84 326031442",
     "birthday": "2001-03-26",
     "location": "Ho Chi Minh City, Vietnam",
     "avatar": "./assets/images/my-avatar.png",
     "aboutText": [
-      "I'm Creative Director and UI/UX Designer from Sydney, Australia, working in web development and print media. I enjoy turning complex problems into simple, beautiful and intuitive designs.",
-      "My job is to build your website so that it is functional and user-friendly but at the same time attractive. Moreover, I add personal touch to your product and make sure that is eye-catching and easy to use. My aim is to bring across your message and identity in the most creative way. I created web design for many famous brand companies."
+      "I'm a passionate Fullstack Web Developer currently based in Ho Chi Minh City, Vietnam, with over 3 years of professional experience building scalable web applications and mobile solutions. Currently working as a Junior Fullstack Web Developer at Gcalls JSC, where I focus on improving user satisfaction and system performance using modern technologies like React, TypeScript, Node.js, and cloud services.",
+      "My technical expertise spans across the entire development stack - from creating intuitive user interfaces with React.js and TypeScript to building robust backend systems with Node.js, Express.js, and databases like MongoDB and PostgreSQL. I've successfully reduced application load times by 25% through optimization techniques and maintained 99.9% uptime for critical systems using load balancing and cloud infrastructure.",
+      "What drives me is solving complex technical challenges while delivering exceptional user experiences. I have hands-on experience with real-time applications using WebRTC and Socket.io, mobile development with React Native, and DevOps practices with AWS and Docker. I'm constantly learning new technologies and best practices to stay at the forefront of web development, with a particular interest in performance optimization, scalable architecture, and emerging web technologies."
     ]
   },
   "social": {
-    "facebook": "#",
-    "twitter": "#",
-    "instagram": "#"
+    "linkedin": "https://linkedin.com/in/caophuoclongse",
+    "github": "https://github.com/caophuoclong",
+    "portfolio": "https://portfolio.leondev.me"
   },
   "services": [
     {
-      "icon": "./assets/images/icon-design.svg",
-      "title": "Web design",
-      "description": "The most modern and high-quality design made at a professional level."
-    },
-    {
       "icon": "./assets/images/icon-dev.svg",
-      "title": "Web development",
-      "description": "High-quality development of sites at the professional level."
+      "title": "Full-Stack Development",
+      "description": "End-to-end web application development using modern technologies like React, Node.js, TypeScript, and cloud services."
     },
     {
       "icon": "./assets/images/icon-app.svg",
-      "title": "Mobile apps",
-      "description": "Professional development of applications for iOS and Android."
+      "title": "Mobile Development",
+      "description": "Cross-platform mobile applications using React Native with real-time features and cloud integration."
+    },
+    {
+      "icon": "./assets/images/icon-design.svg",
+      "title": "API Development",
+      "description": "RESTful APIs and GraphQL services with robust authentication, database integration, and scalable architecture."
     },
     {
       "icon": "./assets/images/icon-photo.svg",
-      "title": "Photography",
-      "description": "I make high-quality photos of any category at a professional level."
+      "title": "DevOps & Cloud",
+      "description": "Deployment automation, containerization with Docker, and cloud infrastructure management on AWS."
     }
   ],
   "testimonials": [
@@ -99,112 +100,222 @@
   ],
   "education": [
     {
-      "institution": "University school of the arts",
-      "period": "2007 — 2008",
-      "description": "Nemo enims ipsam voluptatem, blanditiis praesentium voluptum delenit atque corrupti, quos dolores et quas molestias exceptur."
-    },
-    {
-      "institution": "New york academy of art",
-      "period": "2006 — 2007",
-      "description": "Ratione voluptatem sequi nesciunt, facere quisquams facere menda ossimus, omnis voluptas assumenda est omnis.."
-    },
-    {
-      "institution": "High school of art and design",
-      "period": "2002 — 2004",
-      "description": "Duis aute irure dolor in reprehenderit in voluptate, quila voluptas mag odit aut fugit, sed consequuntur magni dolores eos."
+      "institution": "Can Tho University",
+      "period": "Aug 2019 — Dec 2023",
+      "major": "Bachelor of Software Engineering",
+      "gpa": "3.3",
+      "learnings": [
+        "Object-Oriented Programming and Design Patterns",
+        "Data Structures and Algorithms",
+        "Software Development Principles and Best Practices",
+        "System Design and Architecture",
+        "Database Design and Management",
+        "Web Development Technologies",
+        "Software Testing and Quality Assurance",
+        "Project Management and Agile Methodologies"
+      ]
     }
   ],
   "experience": [
     {
-      "position": "Creative director",
-      "period": "2015 — Present",
-      "description": "Nemo enim ipsam voluptatem blanditiis praesentium voluptum delenit atque corrupti, quos dolores et qvuas molestias exceptur."
+      "position": "Junior Fullstack Developer",
+      "company": "Cyberlogitec Vietnam",
+      "period": "July 2024 — Present",
+      "description": "• Engineered and deployed an end-to-end logistics pricing system that streamlined route optimization and reduced manual calculation time by 30%\n• Developed scalable backend services with NestJS (DDD + Clean Architecture), improving system maintainability and enabling faster feature delivery\n• Built dynamic Next.js interfaces for pricing configuration, enhancing workflow efficiency and reducing setup errors by 20%\n• Implemented logistics business logic for route pricing, cargo allocation, and real-time cost evaluation to improve operational accuracy\n• Collaborated with QA, DevOps, and Product teams to deliver high-quality solutions tailored to logistics clients’ needs\n• Applied modern architecture and testing practices, increasing overall code quality and test coverage by 25%"
     },
     {
-      "position": "Art director",
-      "period": "2013 — 2015",
-      "description": "Nemo enims ipsam voluptatem, blanditiis praesentium voluptum delenit atque corrupti, quos dolores et quas molestias exceptur."
+      "position": "Junior Fullstack Web Developer",
+      "company": "Gcalls JSC",
+      "period": "May 2023 — July 2024",
+      "description": "• Implemented new features improving user satisfaction and workflow efficiency using React, TypeScript, and JavaScript\n• Reduced application load time by 25% through query optimization, database indexing, and responsive design improvements\n• Maintained 99.9% uptime for critical APIs using HAProxy load balancing and monitoring systems\n• Enhanced security and accessibility via Cloudflare Tunnel configuration and SSL implementation\n• Improved code quality by enforcing consistent coding standards and implementing automated testing"
     },
     {
-      "position": "Web designer",
-      "period": "2010 — 2013",
-      "description": "Nemo enims ipsam voluptatem, blanditiis praesentium voluptum delenit atque corrupti, quos dolores et quas molestias exceptur."
+      "position": "Fullstack Web Developer",
+      "company": "Freelance",
+      "period": "Mar 2022 — Apr 2023",
+      "description": "• Built responsive landing pages using Next.js to expand customer reach and improve conversion rates\n• Developed comprehensive customer portals using Node.js, React.js, Prisma ORM, and MySQL database\n• Optimized site performance via image compression, lazy loading, and efficient caching strategies\n• Collaborated with designers and stakeholders to develop intuitive user interfaces and user experiences\n• Delivered projects on time and within budget while maintaining high code quality standards"
+    },
+    {
+      "position": "Intern Fullstack Developer",
+      "company": "Gcalls JSC",
+      "period": "Aug 2021 — Mar 2022",
+      "description": "• Developed automated web crawlers using Puppeteer to enhance lead generation and data collection processes\n• Created Callbox Chrome extension for seamless CRM-integrated calling functionality\n• Automated daily check-in processes using Google App Script with Mattermost integration\n• Gained hands-on experience with modern development workflows and agile methodologies\n• Contributed to code reviews and participated in team knowledge sharing sessions"
     }
   ],
   "skills": {
-    "technical": [
+    "frontend": [
       {
-        "name": "Web design",
-        "level": 80
+        "name": "HTML5",
+        "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg"
       },
       {
-        "name": "Graphic design",
-        "level": 70
+        "name": "CSS3",
+        "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg"
       },
       {
-        "name": "Branding",
-        "level": 90
+        "name": "SASS",
+        "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sass/sass-original.svg"
       },
       {
-        "name": "WordPress",
-        "level": 50
+        "name": "JavaScript",
+        "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"
+      },
+      {
+        "name": "TypeScript",
+        "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg"
+      },
+      {
+        "name": "React",
+        "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg"
+      },
+      {
+        "name": "Next.js",
+        "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg"
+      },
+      {
+        "name": "TailwindCSS",
+        "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-plain.svg"
+      }
+    ],
+    "backend": [
+      {
+        "name": "Node.js",
+        "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg"
+      },
+      {
+        "name": "Express.js",
+        "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg"
+      },
+      {
+        "name": "NestJS",
+        "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nestjs/nestjs-plain.svg"
+      },
+      {
+        "name": "Go",
+        "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/go/go-original.svg"
+      },
+      {
+        "name": "GraphQL",
+        "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/graphql/graphql-plain.svg"
+      }
+    ],
+    "database": [
+      {
+        "name": "MongoDB",
+        "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg"
+      },
+      {
+        "name": "PostgreSQL",
+        "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg"
+      },
+      {
+        "name": "Redis",
+        "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redis/redis-original.svg"
+      }
+    ],
+    "devops": [
+      {
+        "name": "Docker",
+        "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg"
+      },
+      {
+        "name": "AWS",
+        "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-plain-wordmark.svg"
+      },
+      {
+        "name": "Kubernetes",
+        "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kubernetes/kubernetes-plain.svg"
+      },
+      {
+        "name": "Jenkins",
+        "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jenkins/jenkins-original.svg"
+      }
+    ],
+    "tools": [
+      {
+        "name": "Git",
+        "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg"
+      },
+      {
+        "name": "GitHub",
+        "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg"
+      },
+      {
+        "name": "VS Code",
+        "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg"
+      },
+      {
+        "name": "Postman",
+        "icon": "https://www.vectorlogo.zone/logos/getpostman/getpostman-icon.svg"
+      }
+    ],
+    "messaging": [
+      {
+        "name": "Apache Kafka",
+        "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/apachekafka/apachekafka-original.svg"
+      },
+      {
+        "name": "Socket.IO",
+        "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/socketio/socketio-original.svg"
+      }
+    ],
+    "other": [
+      {
+        "name": "Cloudflare",
+        "icon": "https://www.vectorlogo.zone/logos/cloudflare/cloudflare-icon.svg"
+      },
+      {
+        "name": "LaunchDarkly",
+        "icon": "https://www.vectorlogo.zone/logos/launchdarkly/launchdarkly-icon.svg"
+      },
+      {
+        "name": "Prisma",
+        "icon": "https://www.vectorlogo.zone/logos/prismaio/prismaio-icon.svg"
       }
     ]
   },
   "projects": [
     {
-      "title": "Finance",
-      "category": "Web development",
+      "title": "Whispchat",
+      "category": "Mobile Application",
       "image": "./assets/images/project-1.jpg",
-      "url": "#"
+      "url": "https://github.com/caophuoclong/thesis",
+      "description": "Real-time chat application with support for all message types and WebRTC-based audio/video streaming. Built with React Native, Node.js, TypeScript, Socket.io, MongoDB, Auth0, AWS S3, WebRTC, and GraphQL."
     },
     {
-      "title": "Orizon",
-      "category": "Web development",
+      "title": "Gcalls Platform",
+      "category": "Web Development",
       "image": "./assets/images/project-2.png",
-      "url": "#"
+      "url": "#",
+      "description": "Enterprise-level communication platform with features for lead generation, CRM integration, and real-time communication tools."
     },
     {
-      "title": "Fundo",
-      "category": "Web design",
+      "title": "Customer Portal Systems",
+      "category": "Web Development",
       "image": "./assets/images/project-3.jpg",
-      "url": "#"
+      "url": "#",
+      "description": "Custom customer portal solutions built with Node.js, React.js, Prisma, and MySQL for various clients during freelance work."
     },
     {
-      "title": "Brawlhalla",
-      "category": "Applications",
+      "title": "Chrome Extension - Callbox",
+      "category": "Browser Extension",
       "image": "./assets/images/project-4.png",
-      "url": "#"
+      "url": "#",
+      "description": "Chrome extension for CRM-integrated calling functionality, streamlining communication workflows for sales teams."
     },
     {
-      "title": "DSM.",
-      "category": "Web design",
+      "title": "Web Crawling Solutions",
+      "category": "Automation",
       "image": "./assets/images/project-5.png",
-      "url": "#"
+      "url": "#",
+      "description": "Automated web crawlers built with Puppeteer for lead generation and data collection to enhance business processes."
     },
     {
-      "title": "MetaSpark",
-      "category": "Web design",
+      "title": "Landing Pages Collection",
+      "category": "Web Design",
       "image": "./assets/images/project-6.png",
-      "url": "#"
-    },
-    {
-      "title": "Summary",
-      "category": "Web development",
-      "image": "./assets/images/project-7.png",
-      "url": "#"
-    },
-    {
-      "title": "Task Manager",
-      "category": "Applications",
-      "image": "./assets/images/project-8.jpg",
-      "url": "#"
-    },
-    {
-      "title": "Arrival",
-      "category": "Web development",
-      "image": "./assets/images/project-9.png",
-      "url": "#"
+      "url": "#",
+      "description": "Responsive landing pages built with Next.js, optimized for performance and conversion, helping clients expand their customer reach."
     }
   ],
   "blog": [

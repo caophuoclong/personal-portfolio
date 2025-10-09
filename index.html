@@ -22,6 +22,129 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+    <!--
+    - PDF generation CDN scripts
+  -->
+    <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jspdf@2.5.1/dist/jspdf.umd.min.js"></script>
+
+    <!--
+    - Enhanced SEO and AI Crawling Meta Tags
+  -->
+    <meta
+      name="description"
+      content="Long (Leon) Tran - Fullstack Web Developer with 3+ years experience in React, Node.js, TypeScript. Available for hire in Ho Chi Minh City, Vietnam."
+    />
+    <meta
+      name="keywords"
+      content="fullstack developer, web developer, react, nodejs, typescript, javascript, hire developer, vietnam developer, software engineer"
+    />
+    <meta name="author" content="Long (Leon) Tran" />
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large" />
+
+    <!-- Open Graph for Social Sharing -->
+    <meta property="og:title" content="Long (Leon) Tran - Fullstack Web Developer" />
+    <meta
+      property="og:description"
+      content="Experienced Fullstack Developer specializing in React, Node.js, and TypeScript. 3+ years building scalable web applications."
+    />
+    <meta property="og:type" content="profile" />
+    <meta property="og:url" content="https://portfolio.leondev.me" />
+    <meta property="og:image" content="https://portfolio.leondev.me/assets/images/my-avatar.png" />
+
+    <!-- Professional LinkedIn Schema -->
+    <meta property="profile:first_name" content="Long" />
+    <meta property="profile:last_name" content="Tran" />
+    <meta property="profile:username" content="caophuoclongse" />
+
+    <!--
+    - JSON-LD Structured Data for AI Crawlers
+  -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Long (Leon) Tran",
+        "alternateName": "Leon Tran",
+        "jobTitle": "Fullstack Web Developer",
+        "description": "Experienced Fullstack Web Developer with 3+ years of professional experience building scalable web applications and mobile solutions using React, TypeScript, Node.js, and cloud services.",
+        "url": "https://portfolio.leondev.me",
+        "image": "https://portfolio.leondev.me/assets/images/my-avatar.png",
+        "email": "contact@leondev.me",
+        "telephone": "+84326031442",
+        "birthDate": "2001-03-26",
+        "gender": "Male",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Ho Chi Minh City",
+          "addressCountry": "Vietnam"
+        },
+        "sameAs": ["https://linkedin.com/in/caophuoclongse", "https://github.com/caophuoclong", "https://portfolio.leondev.me"],
+        "worksFor": {
+          "@type": "Organization",
+          "name": "Cyberlogitec Vietnam",
+          "description": "Currently working as Junior Fullstack Developer"
+        },
+        "alumniOf": {
+          "@type": "EducationalOrganization",
+          "name": "Can Tho University",
+          "description": "Bachelor of Software Engineering (2019-2023)"
+        },
+        "knowsAbout": [
+          "JavaScript",
+          "TypeScript",
+          "React.js",
+          "Node.js",
+          "Next.js",
+          "Express.js",
+          "MongoDB",
+          "PostgreSQL",
+          "AWS",
+          "Docker",
+          "React Native",
+          "WebRTC",
+          "Socket.io",
+          "NestJS",
+          "Fullstack Development",
+          "Web Development",
+          "Mobile Development",
+          "API Development",
+          "DevOps",
+          "Cloud Computing"
+        ],
+        "hasOccupation": {
+          "@type": "Occupation",
+          "name": "Fullstack Web Developer",
+          "description": "Specialized in building end-to-end web applications and mobile solutions",
+          "skills": [
+            "Frontend Development (React, TypeScript, Next.js)",
+            "Backend Development (Node.js, Express.js, NestJS)",
+            "Database Management (MongoDB, PostgreSQL)",
+            "Cloud Services (AWS)",
+            "Mobile Development (React Native)",
+            "DevOps (Docker, CI/CD)",
+            "Real-time Applications (WebRTC, Socket.io)"
+          ],
+          "experienceRequirements": "3+ years professional experience",
+          "qualifications": "Bachelor's degree in Software Engineering"
+        },
+        "seeks": {
+          "@type": "JobPosting",
+          "title": "Available for Fullstack Developer Positions",
+          "description": "Open to new opportunities in fullstack web development, particularly roles involving React, Node.js, and modern web technologies",
+          "employmentType": ["FULL_TIME", "CONTRACT", "REMOTE"],
+          "jobLocation": {
+            "@type": "Place",
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "Ho Chi Minh City",
+              "addressCountry": "Vietnam"
+            }
+          }
+        }
+      }
+    </script>
   </head>
 
   <body>
@@ -256,9 +379,13 @@
         - #RESUME
       -->
 
-        <article class="resume" data-page="resume">
+        <article class="resume" data-page="resume" id="cv-root">
           <header>
             <h2 class="h2 article-title">Resume</h2>
+            <button class="download-cv-btn" onclick="downloadCV()">
+              <ion-icon name="download-outline"></ion-icon>
+              Download CV
+            </button>
           </header>
 
           <section class="timeline">

@@ -164,7 +164,7 @@ async function loadPortfolioData() {
     populateClients(data.clients);
     populateEducation(data.education);
     populateExperience(data.experience);
-    populateSkills(data.skills.technical);
+    populateSkills(data.skills);
     populateProjects(data.projects);
     populateBlog(data.blog);
   } catch (error) {
@@ -337,10 +337,19 @@ function populateEducation(education) {
   educationList.innerHTML = education
     .map(
       (edu) => `
-    <li class="timeline-item">
-      <h4 class="h4 timeline-item-title">${edu.institution}</h4>
-      <span>${edu.period}</span>
-      <p class="timeline-text">${edu.description}</p>
+    <li class="timeline-item education-item">
+      <h4 class="h4 timeline-item-title education-university">${edu.institution}</h4>
+      <div class="education-details">
+        <h5 class="education-major">${edu.major}</h5>
+        <span class="education-gpa-plain">GPA: ${edu.gpa}</span>
+      </div>
+      <span class="education-period">${edu.period}</span>
+      <div class="education-learnings">
+        <h6 class="learnings-title">What I Learned:</h6>
+        <ul class="learnings-list">
+          ${edu.learnings.map((learning) => `<li class="learning-item">${learning}</li>`).join("")}
+        </ul>
+      </div>
     </li>
   `
     )
@@ -357,8 +366,9 @@ function populateExperience(experience) {
       (exp) => `
     <li class="timeline-item">
       <h4 class="h4 timeline-item-title">${exp.position}</h4>
+      ${exp.company ? `<h5 class="timeline-company">${exp.company}</h5>` : ""}
       <span>${exp.period}</span>
-      <p class="timeline-text">${exp.description}</p>
+      <div class="timeline-text">${exp.description.replace(/\n/g, "<br>")}</div>
     </li>
   `
     )
@@ -366,25 +376,50 @@ function populateExperience(experience) {
 }
 
 // Populate skills
-function populateSkills(skills) {
+function populateSkills(skillsData) {
   const skillsList = document.querySelector("[data-skills-list]");
-  if (!skillsList || !skills) return;
+  if (!skillsList || !skillsData) return;
 
-  skillsList.innerHTML = skills
-    .map(
-      (skill) => `
-    <li class="skills-item">
-      <div class="title-wrapper">
-        <h5 class="h5">${skill.name}</h5>
-        <data value="${skill.level}">${skill.level}%</data>
-      </div>
-      <div class="skill-progress-bg">
-        <div class="skill-progress-fill" style="width: ${skill.level}%;"></div>
-      </div>
-    </li>
-  `
-    )
-    .join("");
+  // Convert skills object to array with categories
+  const categories = Object.keys(skillsData);
+  const categoryNames = {
+    frontend: "Frontend",
+    backend: "Backend",
+    database: "Database",
+    devops: "DevOps & Cloud",
+    tools: "Development Tools",
+    messaging: "Messaging & Real-time",
+    other: "Other Technologies",
+  };
+
+  let skillsHTML = "";
+
+  categories.forEach((categoryKey) => {
+    const skills = skillsData[categoryKey];
+    if (skills && skills.length > 0) {
+      skillsHTML += `
+        <li class="skills-category">
+          <h4 class="skills-category-title">${categoryNames[categoryKey] || categoryKey}</h4>
+          <div class="skills-grid">
+            ${skills
+              .map(
+                (skill) => `
+              <div class="skills-item">
+                <div class="skill-icon-wrapper">
+                  <img src="${skill.icon}" alt="${skill.name}" class="skill-icon" onerror="this.style.display='none'">
+                </div>
+                <h5 class="skill-name">${skill.name}</h5>
+              </div>
+            `
+              )
+              .join("")}
+          </div>
+        </li>
+      `;
+    }
+  });
+
+  skillsList.innerHTML = skillsHTML;
 }
 
 // Populate projects
@@ -453,3 +488,16 @@ function populateBlog(blog) {
 document.addEventListener("DOMContentLoaded", function () {
   loadPortfolioData();
 });
+
+// Download CV function
+function downloadCV() {
+  const link = document.createElement("a");
+  link.href = "./assets/statics/FullstackDeveloper_LongTran.pdf";
+  link.download = "LongTran-FullStackDeveloper-CV.pdf";
+  link.target = "_blank";
+
+  // Append to body, click, and remove
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
+}

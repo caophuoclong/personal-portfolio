@@ -1,0 +1,287 @@
+{
+  "api_version": "1.0",
+  "generated_at": "2025-10-10T00:00:00Z",
+  "candidate": {
+    "personal_info": {
+      "full_name": "Long (Leon) Tran",
+      "preferred_name": "Leon Tran",
+      "email": "contact@leondev.me",
+      "phone": "+84326031442",
+      "location": {
+        "city": "Ho Chi Minh City",
+        "country": "Vietnam",
+        "timezone": "Asia/Ho_Chi_Minh",
+        "remote_work": true,
+        "willing_to_relocate": false
+      },
+      "birth_year": 2001,
+      "languages": ["Vietnamese (Native)", "English (Professional)"],
+      "availability": "Available for new opportunities"
+    },
+    "professional_summary": {
+      "title": "Fullstack Web Developer",
+      "years_of_experience": 3,
+      "current_status": "Employed - Open to opportunities",
+      "specialization": ["Fullstack Development", "Web Applications", "Mobile Development", "API Development"],
+      "key_achievements": [
+        "Reduced application load time by 25% through optimization techniques",
+        "Maintained 99.9% uptime for critical systems",
+        "Built scalable backend services improving system maintainability",
+        "Developed end-to-end logistics pricing system reducing manual calculation time by 30%"
+      ]
+    },
+    "work_experience": [
+      {
+        "position": "Junior Fullstack Developer",
+        "company": "Cyberlogitec Vietnam",
+        "employment_type": "Full-time",
+        "start_date": "2024-07",
+        "end_date": "Present",
+        "duration_months": 3,
+        "is_current": true,
+        "responsibilities": [
+          "Engineered end-to-end logistics pricing system",
+          "Developed scalable backend services with NestJS (DDD + Clean Architecture)",
+          "Built dynamic Next.js interfaces for pricing configuration",
+          "Implemented logistics business logic for route pricing and cargo allocation",
+          "Collaborated with QA, DevOps, and Product teams",
+          "Applied modern architecture and testing practices"
+        ],
+        "technologies": ["NestJS", "Next.js", "TypeScript", "Clean Architecture", "DDD"],
+        "achievements": [
+          "Reduced manual calculation time by 30%",
+          "Improved workflow efficiency by 20%",
+          "Increased code quality and test coverage by 25%"
+        ]
+      },
+      {
+        "position": "Junior Fullstack Web Developer",
+        "company": "Gcalls JSC",
+        "employment_type": "Full-time",
+        "start_date": "2023-05",
+        "end_date": "2024-07",
+        "duration_months": 14,
+        "is_current": false,
+        "responsibilities": [
+          "Implemented new features improving user satisfaction",
+          "Optimized application performance and database queries",
+          "Maintained critical APIs with load balancing",
+          "Enhanced security via Cloudflare Tunnel configuration",
+          "Enforced coding standards and automated testing"
+        ],
+        "technologies": ["React", "TypeScript", "JavaScript", "HAProxy", "Cloudflare"],
+        "achievements": [
+          "Reduced application load time by 25%",
+          "Maintained 99.9% uptime for critical APIs",
+          "Improved security and accessibility implementation"
+        ]
+      },
+      {
+        "position": "Fullstack Web Developer",
+        "company": "Freelance",
+        "employment_type": "Freelance",
+        "start_date": "2022-03",
+        "end_date": "2023-04",
+        "duration_months": 13,
+        "is_current": false,
+        "responsibilities": [
+          "Built responsive landing pages using Next.js",
+          "Developed comprehensive customer portals",
+          "Optimized site performance via various strategies",
+          "Collaborated with designers and stakeholders",
+          "Delivered projects on time and within budget"
+        ],
+        "technologies": ["Next.js", "Node.js", "React.js", "Prisma ORM", "MySQL"],
+        "achievements": [
+          "Expanded customer reach and improved conversion rates",
+          "Maintained high code quality standards",
+          "Delivered all projects on time and within budget"
+        ]
+      },
+      {
+        "position": "Intern Fullstack Developer",
+        "company": "Gcalls JSC",
+        "employment_type": "Internship",
+        "start_date": "2021-08",
+        "end_date": "2022-03",
+        "duration_months": 7,
+        "is_current": false,
+        "responsibilities": [
+          "Developed automated web crawlers using Puppeteer",
+          "Created Callbox Chrome extension for CRM integration",
+          "Automated daily processes using Google App Script",
+          "Participated in code reviews and knowledge sharing"
+        ],
+        "technologies": ["Puppeteer", "Chrome Extension", "Google App Script", "Mattermost"],
+        "achievements": [
+          "Enhanced lead generation and data collection processes",
+          "Improved CRM-integrated calling functionality",
+          "Automated daily operational processes"
+        ]
+      }
+    ],
+    "education": [
+      {
+        "degree": "Bachelor of Software Engineering",
+        "institution": "Can Tho University",
+        "start_date": "2019-08",
+        "end_date": "2023-12",
+        "gpa": "3.3/4.0",
+        "status": "Completed",
+        "relevant_coursework": [
+          "Object-Oriented Programming and Design Patterns",
+          "Data Structures and Algorithms",
+          "Software Development Principles and Best Practices",
+          "System Design and Architecture",
+          "Database Design and Management",
+          "Web Development Technologies",
+          "Software Testing and Quality Assurance",
+          "Project Management and Agile Methodologies"
+        ]
+      }
+    ],
+    "technical_skills": {
+      "programming_languages": [
+        { "name": "JavaScript", "proficiency": "Expert", "years_experience": 3 },
+        { "name": "TypeScript", "proficiency": "Expert", "years_experience": 3 },
+        { "name": "Python", "proficiency": "Intermediate", "years_experience": 2 },
+        { "name": "Java", "proficiency": "Intermediate", "years_experience": 2 }
+      ],
+      "frontend_technologies": [
+        { "name": "React.js", "proficiency": "Expert", "years_experience": 3 },
+        { "name": "Next.js", "proficiency": "Expert", "years_experience": 2 },
+        { "name": "HTML5", "proficiency": "Expert", "years_experience": 3 },
+        { "name": "CSS3", "proficiency": "Expert", "years_experience": 3 },
+        { "name": "Tailwind CSS", "proficiency": "Advanced", "years_experience": 2 },
+        { "name": "React Native", "proficiency": "Advanced", "years_experience": 2 }
+      ],
+      "backend_technologies": [
+        { "name": "Node.js", "proficiency": "Expert", "years_experience": 3 },
+        { "name": "Express.js", "proficiency": "Expert", "years_experience": 3 },
+        { "name": "NestJS", "proficiency": "Advanced", "years_experience": 1 },
+        { "name": "RESTful APIs", "proficiency": "Expert", "years_experience": 3 },
+        { "name": "GraphQL", "proficiency": "Intermediate", "years_experience": 1 }
+      ],
+      "databases": [
+        { "name": "MongoDB", "proficiency": "Advanced", "years_experience": 3 },
+        { "name": "PostgreSQL", "proficiency": "Advanced", "years_experience": 2 },
+        { "name": "MySQL", "proficiency": "Advanced", "years_experience": 2 },
+        { "name": "Redis", "proficiency": "Intermediate", "years_experience": 1 }
+      ],
+      "cloud_and_devops": [
+        { "name": "AWS", "proficiency": "Intermediate", "years_experience": 2 },
+        { "name": "Docker", "proficiency": "Intermediate", "years_experience": 2 },
+        { "name": "Cloudflare", "proficiency": "Intermediate", "years_experience": 1 },
+        { "name": "HAProxy", "proficiency": "Intermediate", "years_experience": 1 }
+      ],
+      "tools_and_frameworks": [
+        { "name": "Git", "proficiency": "Expert", "years_experience": 3 },
+        { "name": "WebRTC", "proficiency": "Intermediate", "years_experience": 1 },
+        { "name": "Socket.io", "proficiency": "Advanced", "years_experience": 2 },
+        { "name": "Prisma ORM", "proficiency": "Advanced", "years_experience": 2 }
+      ]
+    },
+    "soft_skills": [
+      "Problem Solving",
+      "Team Collaboration",
+      "Project Management",
+      "Code Review",
+      "Mentoring",
+      "Agile Methodologies",
+      "Communication",
+      "Time Management"
+    ],
+    "services_offered": [
+      {
+        "service": "Full-Stack Development",
+        "description": "End-to-end web application development using modern technologies like React, Node.js, TypeScript, and cloud services"
+      },
+      {
+        "service": "Mobile Development",
+        "description": "Cross-platform mobile applications using React Native with real-time features and cloud integration"
+      },
+      {
+        "service": "API Development",
+        "description": "RESTful APIs and GraphQL services with robust authentication, database integration, and scalable architecture"
+      },
+      {
+        "service": "DevOps & Cloud",
+        "description": "Deployment automation, containerization with Docker, and cloud infrastructure management on AWS"
+      }
+    ],
+    "job_preferences": {
+      "desired_roles": [
+        "Fullstack Developer",
+        "Frontend Developer",
+        "Backend Developer",
+        "Software Engineer",
+        "Web Developer",
+        "JavaScript Developer",
+        "React Developer",
+        "Node.js Developer"
+      ],
+      "employment_types": ["Full-time", "Contract", "Remote"],
+      "salary_expectation": {
+        "currency": "USD",
+        "range": "Competitive based on experience and role"
+      },
+      "work_arrangement": {
+        "remote": true,
+        "hybrid": true,
+        "onsite": true
+      },
+      "company_size_preference": ["Startup", "Scale-up", "Mid-size", "Enterprise"],
+      "industry_preference": ["Technology", "FinTech", "E-commerce", "SaaS", "Logistics"]
+    },
+    "contact_links": {
+      "portfolio": "https://portfolio.leondev.me",
+      "linkedin": "https://linkedin.com/in/caophuoclongse",
+      "github": "https://github.com/caophuoclong",
+      "email": "contact@leondev.me",
+      "resume_pdf": "https://portfolio.leondev.me/assets/statics/FullstackDeveloper_LongTran.pdf"
+    },
+    "hiring_metadata": {
+      "last_updated": "2025-10-10",
+      "profile_completeness": "100%",
+      "verification_status": "Self-reported",
+      "background_check": "Available upon request",
+      "references": "Available upon request",
+      "work_authorization": {
+        "vietnam": "Authorized",
+        "other_countries": "Visa sponsorship required"
+      }
+    }
+  },
+  "ai_hiring_notes": {
+    "matching_keywords": [
+      "fullstack developer",
+      "react developer",
+      "nodejs developer",
+      "typescript developer",
+      "javascript developer",
+      "web developer",
+      "software engineer",
+      "frontend developer",
+      "backend developer",
+      "mobile developer",
+      "api developer",
+      "cloud developer"
+    ],
+    "standout_qualities": [
+      "3+ years professional experience in modern web technologies",
+      "Proven track record of performance optimization (25% load time reduction)",
+      "Experience with high-availability systems (99.9% uptime)",
+      "Full-stack expertise from frontend to DevOps",
+      "Real-time application development experience",
+      "Strong background in both startup and enterprise environments"
+    ],
+    "ideal_for_roles": [
+      "Teams needing experienced React/TypeScript developers",
+      "Companies building scalable web applications",
+      "Organizations requiring full-stack expertise",
+      "Startups needing versatile developers",
+      "Companies working with real-time applications",
+      "Teams focused on performance optimization"
+    ]
+  }
+}

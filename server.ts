@@ -79,6 +79,24 @@ async function handler(req: Request): Promise<Response> {
     }
   }
 
+  // AI-friendly API endpoint for hiring tools and crawlers
+  if (pathname === "/api/profile" || pathname === "/api/hiring" || pathname === "/api/ai-profile") {
+    try {
+      const profileData = await Deno.readTextFile("./api/profile.json");
+      return new Response(profileData, {
+        headers: {
+          "content-type": "application/json",
+          "access-control-allow-origin": "*",
+          "cache-control": "public, max-age=3600", // Cache for 1 hour
+          "x-robots-tag": "index, follow",
+        },
+      });
+    } catch (error) {
+      console.error("Error reading profile data:", error);
+      return new Response("Internal Server Error", { status: 500 });
+    }
+  }
+
   // Serve HTML files with hot reload script injection in dev mode
   if (pathname === "/" || pathname === "/index.html") {
     try {
@@ -124,6 +142,10 @@ async function handler(req: Request): Promise<Response> {
 
 console.log(`🚀 Portfolio server running at http://localhost:${PORT}`);
 console.log(`📊 API endpoint available at http://localhost:${PORT}/api/data`);
+console.log(`🤖 AI-friendly endpoints:`);
+console.log(`   - http://localhost:${PORT}/api/profile`);
+console.log(`   - http://localhost:${PORT}/api/hiring`);
+console.log(`   - http://localhost:${PORT}/ai-hiring.html`);
 console.log(`📁 Serving files from: ${Deno.cwd()}`);
 
 if (isDev) {
