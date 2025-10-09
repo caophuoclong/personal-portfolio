@@ -1,12 +1,10 @@
-# vCard - Personal portfolio
+# Personal Portfolio - Long (Leon) Tran
 
-![GitHub repo size](https://img.shields.io/github/repo-size/codewithsadee/vcard-personal-portfolio)
-![GitHub stars](https://img.shields.io/github/stars/codewithsadee/vcard-personal-portfolio?style=social)
-![GitHub forks](https://img.shields.io/github/forks/codewithsadee/vcard-personal-portfolio?style=social)
-[![Twitter Follow](https://img.shields.io/twitter/follow/codewithsadee_?style=social)](https://twitter.com/intent/follow?screen_name=codewithsadee_)
-[![YouTube Video Views](https://img.shields.io/youtube/views/SoxmIlgf2zM?style=social)](https://youtu.be/SoxmIlgf2zM)
+![GitHub repo size](https://img.shields.io/github/repo-size/caophuoclong/personal-portfolio)
+![GitHub stars](https://img.shields.io/github/stars/caophuoclong/personal-portfolio?style=social)
+![GitHub forks](https://img.shields.io/github/forks/caophuoclong/personal-portfolio?style=social)
 
-vCard is a fully responsive personal portfolio website, responsive for all devices, built using HTML, CSS, and JavaScript. This version includes a Deno server for local development and API endpoints for dynamic data loading.
+A modern, fully responsive personal portfolio website showcasing professional experience, skills, and projects. Built with HTML, CSS, JavaScript, and powered by Deno for enhanced development experience with hot reload, dynamic data loading, and AI-optimized content for recruitment systems.
 
 ## Demo
 
@@ -20,20 +18,22 @@ Before you begin, ensure you have met the following requirements:
 - [Git](https://git-scm.com/downloads "Download Git") must be installed on your operating system.
 - [Deno](https://deno.land/manual@v1.37.0/getting_started/installation "Install Deno") must be installed for running the development server.
 
-## Installing vCard
+## Installation
 
-To install **vCard**, follow these steps:
+To install the **Personal Portfolio**, follow these steps:
 
 Linux and macOS:
 
 ```bash
-sudo git clone https://github.com/codewithsadee/vcard-personal-portfolio.git
+git clone https://github.com/caophuoclong/personal-portfolio.git
+cd personal-portfolio
 ```
 
 Windows:
 
 ```bash
-git clone https://github.com/codewithsadee/vcard-personal-portfolio.git
+git clone https://github.com/caophuoclong/personal-portfolio.git
+cd personal-portfolio
 ```
 
 ## Running with Deno
@@ -85,23 +85,125 @@ When running in development mode (`deno task dev`), the server provides:
 
 ### Customizing Your Portfolio
 
-1. **Edit Personal Data**: Modify `data.json` to update your personal information, projects, experience, etc.
-2. **Update Assets**: Replace images in the `assets/images/` folder with your own
-3. **Customize Styling**: Modify `assets/css/style.css` for visual changes
+#### 1. Personal Information
 
-### Features
+Edit `data.json` to update your:
 
-- 📱 Fully responsive design
-- 🚀 Deno-powered development server
-- 🔄 Dynamic data loading from JSON
-- 📊 API endpoints for data management
-- ⚡ Hot reload during development
-- 🎨 Customizable via JSON configuration
+- Personal details (name, title, contact info)
+- About section and professional summary
+- Skills and technologies
+- Work experience and projects
+- Education and certifications
+- Social media links
 
-## Contact
+#### 2. Visual Assets
 
-If you want to contact me you can reach me at [Twitter](https://www.x.com/codewithsadee_).
+Replace files in `assets/images/` with your own:
+
+- `my-avatar.png` - Your profile picture
+- `project-*.jpg/png` - Project screenshots
+- `logo-*.png` - Company/client logos
+- `blog-*.jpg` - Blog post images
+
+#### 3. Resume/CV
+
+Update `assets/statics/FullstackDeveloper_LongTran.pdf` with your own resume
+
+#### 4. Styling & Themes
+
+Customize appearance by modifying:
+
+- `assets/css/style.css` - Main stylesheet
+- CSS variables for colors, fonts, and spacing
+- Responsive breakpoints and layouts
+
+#### 5. AI Recruitment Optimization
+
+Update `ai-hiring.html` for better AI recruitment visibility:
+
+- Structured data and JSON-LD
+- SEO meta tags and keywords
+- - Machine-readable professional information
+
+## Project Structure
+
+```text
+personal-portfolio/
+├── 📄 index.html              # Main portfolio page
+├── 🤖 ai-hiring.html          # AI-optimized hiring page
+├── 📊 data.json               # Portfolio data configuration
+├── 🦕 server.ts               # Deno development server
+├── ⚙️ deno.json               # Deno configuration & tasks
+├── 🌐 sitemap.xml             # Search engine sitemap
+├── 🤖 robots.txt              # Web crawler instructions
+├── api/
+│   └── 📋 profile.json        # API data endpoint
+├── assets/
+│   ├── css/
+│   │   └── 🎨 style.css       # Main stylesheet
+│   ├── js/
+│   │   ├── 🔄 hot-reload.js   # Client-side hot reload
+│   │   └── ⚡ script.js       # Main functionality
+│   ├── images/                # All visual assets
+│   └── statics/
+│       └── 📄 *.pdf           # Resume/CV files
+```
+
+## API Endpoints
+
+The Deno server provides the following endpoints:
+
+- `GET /` - Main portfolio page
+- `GET /ai-hiring.html` - AI-optimized hiring page
+- `GET /api/data` - Portfolio data JSON API
+- `GET /api/profile.json` - Profile data endpoint
+- `GET /assets/*` - Static file serving
+- `WebSocket /ws` - Hot reload connection (dev mode)
+
+## Deployment
+
+### Deno Deploy
+
+This project is configured for Deno Deploy:
+
+```bash
+# Deploy to Deno Deploy (requires deno CLI)
+deno task deploy
+```
+
+### Traditional Hosting
+
+For static hosting platforms:
+
+1. Remove or ignore `server.ts` and `deno.json`
+2. Upload all HTML, CSS, JS, and asset files
+3. Configure server to serve `index.html` as default
+
+### Docker Deployment
+
+```dockerfile
+FROM denoland/deno:1.37.0
+WORKDIR /app
+COPY . .
+EXPOSE 8000
+CMD ["deno", "run", "--allow-net", "--allow-read", "server.ts"]
+```
+
+## Get in Touch
+
+For questions about this portfolio template or to connect professionally:
+
+- 📧 Email: [contact@leondev.me](mailto:contact@leondev.me)
+- 💼 LinkedIn: [linkedin.com/in/caophuoclongse](https://linkedin.com/in/caophuoclongse)
+- 🐙 GitHub: [github.com/caophuoclong](https://github.com/caophuoclong)
+- 🌐 Portfolio: [portfolio.leondev.me](https://portfolio.leondev.me)
 
 ## License
 
-MIT
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## Acknowledgments
+
+- Original vCard template inspiration
+- Deno community for excellent tooling
+- Open source contributors and the web development community
