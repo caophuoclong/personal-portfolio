@@ -1,0 +1,21 @@
+{
+  "tasks": {
+    "dev": "deno run --allow-net --allow-read --watch server.ts --dev",
+    "start": "deno run --allow-net --allow-read server.ts",
+    "serve": "deno run --allow-net --allow-read server.ts"
+  },
+  "fmt": {
+    "files": {
+      "include": ["server.ts", "assets/js/"]
+    }
+  },
+  "lint": {
+    "files": {
+      "include": ["server.ts"]
+    }
+  },
+  "compilerOptions": {
+    "lib": ["deno.window"],
+    "strict": true
+  }
+}
