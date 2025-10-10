@@ -1,4 +1,5 @@
 import { BaseController } from "./BaseController.ts";
+import { getKVStore, ContactMessage } from "../db/kvStore.ts";
 
 interface ContactFormData {
   fullname: string;
@@ -19,6 +20,21 @@ export class ContactController extends BaseController {
         return this.sendError("All fields are required", 400);
       }
 
+      // Store in KV database first
+      const kvStore = await getKVStore();
+
+      const contactData: Omit<ContactMessage, "id" | "timestamp"> = {
+        fullname,
+        email,
+        message,
+        source: "contact-form",
+        ipAddress: this.getClientIP(req),
+        userAgent: req.headers.get("User-Agent") || undefined,
+      };
+
+      const contactId = await kvStore.storeContactMessage(contactData);
+      console.log(`💬 Stored contact message with ID: ${contactId}`);
+
       // Get Telegram bot token from environment
       const telegramToken = Deno.env.get("TELEGRAM_BOT_MESSAGE_TOKEN");
       if (!telegramToken) {
@@ -26,8 +42,8 @@ export class ContactController extends BaseController {
         return this.sendError("Server configuration error", 500);
       }
 
-      // Format message for Telegram
-      const telegramMessage = `🔔 New Contact Form Submission\n\n👤 Name: ${fullname}\n📧 Email: ${email}\n💬 Message:\n${message}`;
+      // Format message for Telegram (include contact ID)
+      const telegramMessage = `🔔 New Contact Form Submission\n\n👤 Name: ${fullname}\n📧 Email: ${email}\n🆔 ID: ${contactId}\n💬 Message:\n${message}`;
 
       // Get chat ID from environment
       const chatId = Deno.env.get("TELEGRAM_CHAT_ID");
@@ -55,10 +71,34 @@ export class ContactController extends BaseController {
         return this.sendError("Failed to send message", 500);
       }
 
-      return this.sendSuccess({}, "Message sent successfully!");
+      return this.sendSuccess({ contactId }, "Message sent successfully!");
     } catch (error) {
       console.error("Error processing contact form:", error);
       return this.sendError("Internal server error", 500);
     }
+  }
+
+  /**
+   * Get client IP address from request headers
+   */
+  private getClientIP(req: Request): string | undefined {
+    // Check common headers used by proxies and load balancers
+    const forwardedFor = req.headers.get("x-forwarded-for");
+    if (forwardedFor) {
+      return forwardedFor.split(",")[0].trim();
+    }
+
+    const realIP = req.headers.get("x-real-ip");
+    if (realIP) {
+      return realIP;
+    }
+
+    const cfConnectingIP = req.headers.get("cf-connecting-ip");
+    if (cfConnectingIP) {
+      return cfConnectingIP;
+    }
+
+    // Note: In Deno Deploy, the actual remote address is not directly accessible
+    return undefined;
   }
 }
