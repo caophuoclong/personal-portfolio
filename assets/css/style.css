@@ -2262,6 +2262,7 @@ textarea.form-input::-webkit-resizer {
   border: none;
   cursor: pointer;
   font-family: inherit;
+  transform: translateY(10);
 }
 
 .download-cv-btn::before {

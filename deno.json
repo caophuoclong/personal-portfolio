@@ -1,36 +1,42 @@
 {
   "tasks": {
-    "dev": "deno run --allow-net --allow-read --watch server.ts --dev",
-    "start": "deno run --allow-net --allow-read server.ts",
-    "serve": "deno run --allow-net --allow-read server.ts"
+    "dev": "deno run --allow-net --allow-read --allow-env --watch server.ts --dev",
+    "start": "deno run --allow-net --allow-read --allow-env server.ts",
+    "serve": "deno run --allow-net --allow-read --allow-env server.ts",
+    "build": "deno run --allow-read --allow-write --allow-run --allow-env scripts/build.ts",
+    "deploy": "deno run --allow-read --allow-write --allow-run --allow-env scripts/build.ts && deployctl deploy --project=75691c78-d318-4355-8d6d-c0342099bda2 server.ts",
+    "health-check": "deno run --allow-net --allow-env scripts/health-check.ts"
   },
   "fmt": {
     "files": {
-      "include": [
-        "server.ts",
-        "assets/js/"
-      ]
+      "include": ["server.ts", "assets/js/"]
     }
   },
   "lint": {
     "files": {
-      "include": [
-        "server.ts"
-      ]
+      "include": ["server.ts"]
     }
   },
   "compilerOptions": {
-    "lib": [
-      "deno.window"
-    ],
+    "lib": ["deno.window"],
     "strict": true
   },
   "deploy": {
     "project": "75691c78-d318-4355-8d6d-c0342099bda2",
     "exclude": [
-      "**/node_modules"
+      "**/node_modules",
+      ".git/**",
+      ".github/**",
+      "scripts/**",
+      ".env",
+      ".env.example",
+      "README.md",
+      "LICENSE",
+      "deploy-info.json",
+      "**/*.test.ts",
+      "tests/**"
     ],
-    "include": [],
+    "include": ["server.ts", "index.html", "data.json", "api/**", "assets/**", "sitemap.xml", "robots.txt", "ai-hiring.html"],
     "entrypoint": "server.ts"
   }
 }

@@ -114,6 +114,113 @@ for (let i = 0; i < formInputs.length; i++) {
   });
 }
 
+// handle form submission
+form.addEventListener("submit", async function (e) {
+  e.preventDefault();
+
+  // Get form data
+  const formData = new FormData(form);
+  const data = {
+    fullname: formData.get("fullname"),
+    email: formData.get("email"),
+    message: formData.get("message"),
+  };
+
+  // Update button to show loading state
+  const originalText = formBtn.innerHTML;
+  formBtn.innerHTML = '<ion-icon name="hourglass-outline"></ion-icon><span>Sending...</span>';
+  formBtn.disabled = true;
+
+  try {
+    // Send data to server
+    const response = await fetch("/api/contact", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
+    });
+
+    const result = await response.json();
+
+    if (response.ok && result.success) {
+      // Success - show success message and reset form
+      formBtn.innerHTML = '<ion-icon name="checkmark-outline"></ion-icon><span>Message Sent!</span>';
+      form.reset();
+
+      // Show success notification
+      showNotification("Message sent successfully! I'll get back to you soon.", "success");
+
+      // Reset button after 3 seconds
+      setTimeout(() => {
+        formBtn.innerHTML = originalText;
+        formBtn.disabled = true; // Keep disabled until form is filled again
+      }, 3000);
+    } else {
+      // Error - show error message
+      formBtn.innerHTML = '<ion-icon name="close-outline"></ion-icon><span>Failed to Send</span>';
+      showNotification(result.error || "Failed to send message. Please try again.", "error");
+
+      // Reset button after 3 seconds
+      setTimeout(() => {
+        formBtn.innerHTML = originalText;
+        formBtn.disabled = false;
+      }, 3000);
+    }
+  } catch (error) {
+    console.error("Error sending message:", error);
+    formBtn.innerHTML = '<ion-icon name="close-outline"></ion-icon><span>Network Error</span>';
+    showNotification("Network error. Please check your connection and try again.", "error");
+
+    // Reset button after 3 seconds
+    setTimeout(() => {
+      formBtn.innerHTML = originalText;
+      formBtn.disabled = false;
+    }, 3000);
+  }
+});
+
+// Notification function
+function showNotification(message, type = "info") {
+  // Create notification element
+  const notification = document.createElement("div");
+  notification.className = `notification notification-${type}`;
+  notification.style.cssText = `
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: ${type === "success" ? "#4CAF50" : type === "error" ? "#f44336" : "#2196F3"};
+    color: white;
+    padding: 15px 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    z-index: 1000;
+    font-family: inherit;
+    max-width: 400px;
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
+  `;
+  notification.textContent = message;
+
+  // Add to page
+  document.body.appendChild(notification);
+
+  // Animate in
+  setTimeout(() => {
+    notification.style.transform = "translateX(0)";
+  }, 100);
+
+  // Remove after 5 seconds
+  setTimeout(() => {
+    notification.style.transform = "translateX(100%)";
+    setTimeout(() => {
+      if (notification.parentNode) {
+        notification.parentNode.removeChild(notification);
+      }
+    }, 300);
+  }, 5000);
+}
+
 // page navigation variables
 const navigationLinks = document.querySelectorAll("[data-nav-link]");
 const pages = document.querySelectorAll("[data-page]");

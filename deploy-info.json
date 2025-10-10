@@ -1,0 +1,10 @@
+{
+  "timestamp": "2025-10-10T03:06:45.096Z",
+  "entrypoint": "server.ts",
+  "deno_version": "2.4.3",
+  "typescript_version": "5.8.3",
+  "v8_version": "13.7.152.14-rusty",
+  "build_environment": "Local",
+  "commit_sha": "unknown",
+  "branch": "unknown"
+}

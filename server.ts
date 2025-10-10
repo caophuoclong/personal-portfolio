@@ -1,5 +1,9 @@
 import { serve } from "https://deno.land/std@0.208.0/http/server.ts";
 import { serveDir } from "https://deno.land/std@0.208.0/http/file_server.ts";
+import { load } from "https://deno.land/std@0.208.0/dotenv/mod.ts";
+
+// Load environment variables from .env file
+await load({ export: true });
 
 const PORT = 8000;
 const isDev = Deno.args.includes("--dev");
@@ -8,7 +12,6 @@ const isDev = Deno.args.includes("--dev");
 const clients: Set<WebSocket> = new Set();
 
 function broadcastReload() {
-  console.log("🔄 Broadcasting reload to", clients.size, "client(s)");
   for (const client of clients) {
     try {
       client.send("reload");
@@ -95,6 +98,108 @@ async function handler(req: Request): Promise<Response> {
       console.error("Error reading profile data:", error);
       return new Response("Internal Server Error", { status: 500 });
     }
+  }
+
+  // Contact form submission endpoint
+  if (pathname === "/api/contact" && req.method === "POST") {
+    try {
+      const body = await req.json();
+      const { fullname, email, message } = body;
+
+      console.log("Received contact form submission:", body);
+
+      // Validate required fields
+      if (!fullname || !email || !message) {
+        return new Response(JSON.stringify({ error: "All fields are required" }), {
+          status: 400,
+          headers: {
+            "content-type": "application/json",
+            "access-control-allow-origin": "*",
+          },
+        });
+      }
+
+      // Get Telegram bot token from environment
+      const telegramToken = Deno.env.get("TELEGRAM_BOT_MESSAGE_TOKEN");
+      if (!telegramToken) {
+        console.error("Telegram bot token not found in environment variables");
+        return new Response(JSON.stringify({ error: "Server configuration error" }), {
+          status: 500,
+          headers: {
+            "content-type": "application/json",
+            "access-control-allow-origin": "*",
+          },
+        });
+      }
+
+      // Format message for Telegram
+      const telegramMessage = `🔔 New Contact Form Submission\n\n👤 Name: ${fullname}\n📧 Email: ${email}\n💬 Message:\n${message}`;
+
+      // Get chat ID from environment
+      const chatId = Deno.env.get("TELEGRAM_CHAT_ID");
+      if (!chatId) {
+        console.error("Telegram chat ID not found in environment variables");
+        return new Response(JSON.stringify({ error: "Server configuration error" }), {
+          status: 500,
+          headers: {
+            "content-type": "application/json",
+            "access-control-allow-origin": "*",
+          },
+        });
+      }
+      const telegramUrl = `https://api.telegram.org/bot${telegramToken}/sendMessage`;
+
+      const telegramResponse = await fetch(telegramUrl, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          chat_id: chatId,
+          text: telegramMessage,
+          parse_mode: "HTML",
+        }),
+      });
+
+      if (!telegramResponse.ok) {
+        console.error("Failed to send Telegram message:", await telegramResponse.text());
+        return new Response(JSON.stringify({ error: "Failed to send message" }), {
+          status: 500,
+          headers: {
+            "content-type": "application/json",
+            "access-control-allow-origin": "*",
+          },
+        });
+      }
+
+      return new Response(JSON.stringify({ success: true, message: "Message sent successfully!" }), {
+        headers: {
+          "content-type": "application/json",
+          "access-control-allow-origin": "*",
+        },
+      });
+    } catch (error) {
+      console.error("Error processing contact form:", error);
+      return new Response(JSON.stringify({ error: "Internal server error" }), {
+        status: 500,
+        headers: {
+          "content-type": "application/json",
+          "access-control-allow-origin": "*",
+        },
+      });
+    }
+  }
+
+  // Handle preflight requests for CORS
+  if (req.method === "OPTIONS") {
+    return new Response(null, {
+      status: 204,
+      headers: {
+        "access-control-allow-origin": "*",
+        "access-control-allow-methods": "GET, POST, OPTIONS",
+        "access-control-allow-headers": "Content-Type",
+      },
+    });
   }
 
   // Serve HTML files with hot reload script injection in dev mode
