@@ -235,20 +235,20 @@
 
           <ul class="social-list" data-social-list>
             <li class="social-item">
-              <a href="#" class="social-link" data-social-facebook>
+              <a href="https://www.facebook.com/caophuoclonq/" class="social-link" data-social-facebook>
                 <ion-icon name="logo-facebook"></ion-icon>
               </a>
             </li>
 
             <li class="social-item">
-              <a href="#" class="social-link" data-social-twitter>
-                <ion-icon name="logo-twitter"></ion-icon>
+              <a href="https://github.com/caophuoclong" class="social-link" data-social-github>
+                <ion-icon name="logo-github"></ion-icon>
               </a>
             </li>
 
             <li class="social-item">
-              <a href="#" class="social-link" data-social-instagram>
-                <ion-icon name="logo-instagram"></ion-icon>
+              <a href="https://www.linkedin.com/in/caophuoclongse/" class="social-link" data-social-instagram>
+                <ion-icon name="logo-linkedin"></ion-icon>
               </a>
             </li>
           </ul>
@@ -368,6 +368,35 @@
             <h3 class="h3 skills-title">My skills</h3>
 
             <ul class="skills-list content-card" data-skills-list></ul>
+
+            <!-- Skills Modal -->
+            <div class="skill-modal-overlay" id="skillModalOverlay" onclick="closeSkillModal()">
+              <div class="skill-modal" onclick="event.stopPropagation()">
+                <div class="skill-modal-header">
+                  <div class="skill-modal-title">
+                    <img src="" alt="" class="skill-modal-icon" id="skillModalIcon" />
+                    <h3 id="skillModalTitle">Skill Name</h3>
+                  </div>
+                  <button class="skill-modal-close" onclick="closeSkillModal()">
+                    <ion-icon name="close-outline"></ion-icon>
+                  </button>
+                </div>
+                <div class="skill-modal-content">
+                  <div class="skill-description">
+                    <h4>About</h4>
+                    <p id="skillModalDescription">Skill description...</p>
+                  </div>
+                  <div class="skill-experience">
+                    <h4>Experience & Knowledge</h4>
+                    <ul id="skillModalExperience"></ul>
+                  </div>
+                  <div class="skill-projects">
+                    <h4>Related Projects</h4>
+                    <ul id="skillModalProjects"></ul>
+                  </div>
+                </div>
+              </div>
+            </div>
           </section>
         </article>
 

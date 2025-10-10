@@ -146,63 +146,156 @@
     "frontend": [
       {
         "name": "HTML5",
-        "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg"
+        "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg",
+        "description": "The standard markup language for creating web pages. Expert in semantic HTML, accessibility, and modern HTML5 features.",
+        "experience": ["Semantic HTML structure", "Accessibility best practices", "Form validation", "Canvas and SVG integration"],
+        "projects": ["Portfolio Website", "E-commerce Platform", "Landing Pages"]
       },
       {
         "name": "CSS3",
-        "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg"
+        "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg",
+        "description": "Cascading Style Sheets for web design and layout. Proficient in modern CSS features, animations, and responsive design.",
+        "experience": ["Flexbox and Grid layouts", "CSS animations and transitions", "Responsive design", "CSS-in-JS solutions"],
+        "projects": ["Responsive Portfolio", "Component Libraries", "Animation Showcase"]
       },
       {
         "name": "SASS",
-        "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sass/sass-original.svg"
+        "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sass/sass-original.svg",
+        "description": "CSS preprocessor that adds power and elegance to CSS with variables, mixins, and advanced features.",
+        "experience": ["SCSS syntax and features", "Mixins and functions", "Modular architecture", "Build tool integration"],
+        "projects": ["Design System", "Theme Management", "Component Styling"]
       },
       {
         "name": "JavaScript",
-        "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"
+        "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg",
+        "description": "The core programming language of the web. I have deep expertise in modern JavaScript (ES6+) for both frontend and backend development, with a strong focus on clean, efficient, and maintainable code.",
+        "experience": [
+          "4+ years of professional JavaScript development",
+          "ES6+ features (arrow functions, destructuring, async/await, modules)",
+          "Functional and object-oriented programming paradigms",
+          "Asynchronous programming with Promises and async/await",
+          "DOM manipulation and event handling",
+          "Modern build tools and bundlers (Webpack, Vite)",
+          "Testing frameworks (Jest, Mocha, Cypress)",
+          "Performance optimization and debugging"
+        ],
+        "projects": [
+          "Interactive Portfolio - Dynamic web applications",
+          "Data Visualization Dashboard - Complex DOM manipulation",
+          "Chrome Extensions - Browser automation tools"
+        ]
       },
       {
         "name": "TypeScript",
-        "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg"
+        "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg",
+        "description": "A strongly typed programming language that builds on JavaScript, providing better tooling and error detection. I use TypeScript to write more reliable and maintainable code across both frontend and backend applications.",
+        "experience": [
+          "2+ years of TypeScript development in production",
+          "Advanced type system usage (generics, utility types, mapped types)",
+          "Interface and type definition design for APIs",
+          "Integration with React for type-safe component development",
+          "Backend development with Node.js and TypeScript",
+          "Configuration and setup of TypeScript projects",
+          "Migration of JavaScript codebases to TypeScript"
+        ],
+        "projects": [
+          "FastHire Platform - Full-stack TypeScript application",
+          "Whispchat API - Type-safe backend services",
+          "Component Library - Reusable React components with TypeScript"
+        ]
       },
       {
         "name": "React",
-        "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg"
+        "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg",
+        "description": "A powerful JavaScript library for building interactive user interfaces with component-based architecture. I have extensive experience creating scalable, maintainable web applications using React's ecosystem.",
+        "experience": [
+          "3+ years of professional React development",
+          "Built complex SPAs with React Router for navigation",
+          "Expertise in React Hooks (useState, useEffect, useContext, custom hooks)",
+          "State management with Redux Toolkit and Zustand",
+          "Performance optimization with React.memo, useMemo, useCallback",
+          "Component testing with React Testing Library",
+          "Server-side rendering with Next.js integration"
+        ],
+        "projects": [
+          "Whispchat - Real-time messaging app with React Native",
+          "Portfolio Website - Modern responsive portfolio",
+          "E-commerce Dashboard - Admin panel with complex data visualization"
+        ]
       },
       {
         "name": "Next.js",
-        "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg"
+        "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg",
+        "level": 85
       },
       {
         "name": "TailwindCSS",
-        "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-plain.svg"
+        "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-plain.svg",
+        "level": 88
       }
     ],
     "backend": [
       {
         "name": "Node.js",
-        "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg"
+        "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg",
+        "description": "A JavaScript runtime built on Chrome's V8 engine for server-side development. I leverage Node.js to build scalable backend services, APIs, and real-time applications with high performance and efficiency.",
+        "experience": [
+          "3+ years building production Node.js applications",
+          "RESTful API development with Express.js and Fastify",
+          "Real-time applications with Socket.IO and WebSockets",
+          "Microservices architecture and deployment",
+          "Database integration (MongoDB, PostgreSQL, Redis)",
+          "Authentication and authorization systems (JWT, OAuth)",
+          "Performance optimization and monitoring",
+          "Package management with npm and yarn"
+        ],
+        "projects": [
+          "Whispchat Backend - Real-time messaging server",
+          "FastHire API - Job matching platform backend",
+          "E-commerce Platform - Scalable shopping cart system"
+        ]
       },
       {
         "name": "Express.js",
-        "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg"
+        "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg",
+        "level": 88
       },
       {
         "name": "NestJS",
-        "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nestjs/nestjs-plain.svg"
+        "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nestjs/nestjs-plain.svg",
+        "level": 85
       },
       {
         "name": "Go",
-        "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/go/go-original.svg"
+        "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/go/go-original.svg",
+        "level": 75
       },
       {
         "name": "GraphQL",
-        "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/graphql/graphql-plain.svg"
+        "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/graphql/graphql-plain.svg",
+        "level": 82
       }
     ],
     "database": [
       {
         "name": "MongoDB",
-        "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg"
+        "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg",
+        "description": "A NoSQL document database that provides high performance, high availability, and easy scalability. I use MongoDB for flexible data modeling and efficient storage solutions in modern web applications.",
+        "experience": [
+          "2+ years working with MongoDB in production environments",
+          "Database design and schema optimization",
+          "Aggregation pipeline for complex data queries",
+          "Integration with Node.js using Mongoose ODM",
+          "Performance tuning and indexing strategies",
+          "Replica sets and sharding for scalability",
+          "Data migration and backup strategies",
+          "Atlas cloud deployment and management"
+        ],
+        "projects": [
+          "Whispchat Database - Message storage and user management",
+          "E-commerce Platform - Product catalog and order management",
+          "Analytics Dashboard - Event tracking and reporting system"
+        ]
       },
       {
         "name": "PostgreSQL",

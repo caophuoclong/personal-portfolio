@@ -25,6 +25,16 @@ export async function loadPortfolioData() {
 
     const data = await response.json();
 
+    // Store data globally for modal access
+    globalThis.portfolioData = data;
+
+    // Also store in window if available (for browser compatibility)
+    if (typeof document !== "undefined" && document.defaultView) {
+      document.defaultView.portfolioData = data;
+    }
+
+    console.log("Portfolio data loaded and stored:", data); // Debug log
+
     populatePersonalInfo(data.personal);
     populateSocialLinks(data.social);
     populateAboutText(data.personal.aboutText);
@@ -302,7 +312,7 @@ function populateSkills(skillsData) {
             ${skills
               .map(
                 (skill) => `
-              <div class="skills-item">
+              <div class="skills-item" onclick="openSkillModal('${skill.name.replace(/'/g, "\\'")}', '${categoryKey}')">
                 <div class="skill-icon-wrapper">
                   <img src="${skill.icon}" alt="${skill.name}" class="skill-icon" onerror="this.style.display='none'">
                 </div>
@@ -318,6 +328,125 @@ function populateSkills(skillsData) {
   });
 
   skillsList.innerHTML = skillsHTML;
+}
+
+/**
+ * Open skill modal with detailed information
+ * @param {string} skillName - Name of the skill
+ * @param {string} category - Category of the skill
+ */
+function openSkillModal(skillName, category) {
+  console.log("Opening modal for:", skillName, "in category:", category); // Debug log
+
+  // Get skill data from the loaded data
+  if (!globalThis.portfolioData) {
+    console.error("Portfolio data not available. Make sure loadPortfolioData() has been called.");
+    alert("Data is still loading, please try again in a moment.");
+    return;
+  }
+
+  if (!globalThis.portfolioData.skills) {
+    console.error("Skills data not found in portfolio data:", globalThis.portfolioData);
+    return;
+  }
+
+  const skills = globalThis.portfolioData.skills[category];
+  if (!skills) {
+    console.error("Category not found:", category, "Available categories:", Object.keys(globalThis.portfolioData.skills));
+    return;
+  }
+
+  const skill = skills.find((s) => s.name === skillName);
+  console.log("Found skill:", skill); // Debug log
+
+  if (!skill) return;
+
+  // Populate modal content
+  document.getElementById("skillModalIcon").src = skill.icon;
+  document.getElementById("skillModalIcon").alt = skill.name;
+  document.getElementById("skillModalTitle").textContent = skill.name;
+  document.getElementById("skillModalDescription").textContent = skill.description || "No description available.";
+
+  // Populate experience list
+  const experienceList = document.getElementById("skillModalExperience");
+  if (skill.experience && skill.experience.length > 0) {
+    experienceList.innerHTML = skill.experience.map((exp) => `<li>${exp}</li>`).join("");
+  } else {
+    experienceList.innerHTML = "<li>Experience details coming soon...</li>";
+  }
+
+  // Populate projects list
+  const projectsList = document.getElementById("skillModalProjects");
+  if (skill.projects && skill.projects.length > 0) {
+    projectsList.innerHTML = skill.projects.map((project) => `<li>${project}</li>`).join("");
+  } else {
+    projectsList.innerHTML = "<li>Project details coming soon...</li>";
+  }
+
+  // Show modal
+  const modalOverlay = document.getElementById("skillModalOverlay");
+  modalOverlay.classList.add("active");
+  document.body.style.overflow = "hidden";
+}
+
+/**
+ * Close skill modal
+ */
+function closeSkillModal() {
+  const modalOverlay = document.getElementById("skillModalOverlay");
+  modalOverlay.classList.remove("active");
+  document.body.style.overflow = "";
+}
+
+// Make functions available globally for HTML onclick
+globalThis.openSkillModal = openSkillModal;
+globalThis.closeSkillModal = closeSkillModal;
+
+// Also ensure functions are available when DOM is loaded
+document.addEventListener("DOMContentLoaded", function () {
+  globalThis.openSkillModal = openSkillModal;
+  globalThis.closeSkillModal = closeSkillModal;
+  console.log("Modal functions registered"); // Debug log
+});
+
+// Close modal on Escape key
+document.addEventListener("keydown", function (e) {
+  if (e.key === "Escape") {
+    closeSkillModal();
+  }
+});
+
+// Store loaded data globally for modal access
+let originalLoadData;
+if (typeof loadData === "function") {
+  originalLoadData = loadData;
+}
+
+async function loadData() {
+  try {
+    const response = await fetch("./data.json");
+    const data = await response.json();
+    globalThis.portfolioData = data; // Store globally for modal access
+
+    // Also store in window if available (for browser compatibility)
+    if (typeof document !== "undefined" && document.defaultView) {
+      document.defaultView.portfolioData = data;
+    }
+
+    console.log("Portfolio data loaded:", data); // Debug log
+
+    if (originalLoadData) {
+      return originalLoadData.call(this);
+    } else {
+      // Call individual populate functions if original doesn't exist
+      populateAbout(data.about);
+      populateExperience(data.experience);
+      populateSkills(data.skills);
+      populateProjects(data.projects);
+    }
+  } catch (error) {
+    console.error("Error loading data:", error);
+  }
 }
 
 /**

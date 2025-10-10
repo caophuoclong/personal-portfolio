@@ -21,6 +21,12 @@ export function initNavigation() {
     navigationLinks[i].addEventListener("click", function () {
       const selectedPageName = this.innerHTML.toLowerCase();
 
+      // Remove active class from all navigation links first
+      for (let k = 0; k < navigationLinks.length; k++) {
+        navigationLinks[k].classList.remove("active");
+      }
+
+      // Remove active class from all pages and add to selected page
       for (let j = 0; j < pages.length; j++) {
         if (selectedPageName === pages[j].dataset.page) {
           pages[j].classList.add("active");
@@ -28,7 +34,6 @@ export function initNavigation() {
           globalThis.scrollTo(0, 0);
         } else {
           pages[j].classList.remove("active");
-          navigationLinks[j].classList.remove("active");
         }
       }
     });

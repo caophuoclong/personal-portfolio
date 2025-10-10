@@ -1,18 +1,16 @@
 import { Router } from "./Router.ts";
 import { HotReloadController } from "./controllers/HotReloadController.ts";
-import { StaticController } from "./controllers/StaticController.ts";
 import { createAllRoutes } from "./routes/index.ts";
 import { corsMiddleware, loggingMiddleware } from "./middleware/index.ts";
+import { serveDir } from "https://deno.land/std@0.208.0/http/file_server.ts";
 
 export class Application {
   private router: Router;
   private hotReloadController: HotReloadController;
-  private staticController: StaticController;
 
   constructor(private isDev: boolean, private port: number) {
     this.router = new Router();
     this.hotReloadController = new HotReloadController(isDev, port);
-    this.staticController = new StaticController(this.hotReloadController);
 
     this.setupMiddleware();
     this.setupRoutes();
@@ -24,7 +22,7 @@ export class Application {
   }
 
   private setupRoutes(): void {
-    const routeGroups = createAllRoutes(this.hotReloadController, this.staticController);
+    const routeGroups = createAllRoutes(this.hotReloadController);
 
     for (const group of routeGroups) {
       this.router.addRouteGroup(group);
@@ -43,7 +41,12 @@ export class Application {
 
       // If no specific route matched (404), serve static files
       if (response.status === 404) {
-        return await this.staticController.serveStatic(req);
+        return await serveDir(req, {
+          fsRoot: ".",
+          urlRoot: "",
+          showDirListing: false,
+          showDotfiles: false,
+        });
       }
 
       return response;

@@ -1,19 +1,30 @@
 import { RouteGroup } from "./types.ts";
-import { StaticController } from "../controllers/StaticController.ts";
 
-export function createStaticRoutes(staticController: StaticController): RouteGroup {
+async function serveIndexHtml(): Promise<Response> {
+  try {
+    const html = await Deno.readTextFile("./index.html");
+    return new Response(html, {
+      headers: { "content-type": "text/html" },
+    });
+  } catch (error) {
+    console.error("Error reading index.html:", error);
+    return new Response("File not found", { status: 404 });
+  }
+}
+
+export function createStaticRoutes(): RouteGroup {
   return {
     prefix: "",
     routes: [
       {
         path: "/",
         method: "GET",
-        handler: () => staticController.serveIndex(),
+        handler: () => serveIndexHtml(),
       },
       {
         path: "/index.html",
         method: "GET",
-        handler: () => staticController.serveIndex(),
+        handler: () => serveIndexHtml(),
       },
     ],
   };
