@@ -1,11 +1,11 @@
 User-agent: *
 Allow: /
 
-# Allow AI hiring tools and crawlers
+# Allow all major AI hiring tools and crawlers
 User-agent: GPTBot
 Allow: /
 
-User-agent: ChatGPT-User
+User-agent: ChatGPT-User  
 Allow: /
 
 User-agent: CCBot
@@ -17,15 +17,37 @@ Allow: /
 User-agent: Claude-Web
 Allow: /
 
-# Important files for AI crawlers
+User-agent: Bard
+Allow: /
+
+User-agent: Bing
+Allow: /
+
+User-agent: LinkedInBot
+Allow: /
+
+User-agent: facebookexternalhit
+Allow: /
+
+# AI-friendly structured data endpoints
 Allow: /api/profile
-Allow: /api/hiring
+Allow: /api/hiring  
 Allow: /api/ai-profile
 Allow: /data.json
+Allow: /ai-hiring.html
 Allow: /assets/statics/FullstackDeveloper_LongTran.pdf
+
+# Hiring-specific meta information
+# Candidate: Long (Leon) Tran
+# Status: Available for hire
+# Experience: 3+ years fullstack development  
+# Technologies: React, Node.js, TypeScript, AWS
+# Location: Ho Chi Minh City, Vietnam
+# Remote: Yes
+# Contact: contact@leondev.me
 
 # Sitemap location
 Sitemap: https://portfolio.leondev.me/sitemap.xml
 
-# Cache settings
+# Cache settings for AI crawlers
 Crawl-delay: 1

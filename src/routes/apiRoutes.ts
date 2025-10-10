@@ -26,7 +26,7 @@ export function createApiRoutes(): RouteGroup {
       {
         path: "/hiring",
         method: "GET",
-        handler: () => profileController.getProfile(),
+        handler: () => profileController.getHiringProfile(),
       },
       {
         path: "/ai-profile",

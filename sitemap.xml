@@ -1,15 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" 
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   
-  <!-- Main Portfolio Page -->
+  <!-- Main Portfolio Page - Primary Entry Point -->
   <url>
     <loc>https://portfolio.leondev.me/</loc>
     <lastmod>2025-10-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://portfolio.leondev.me/assets/images/my-avatar.png</image:loc>
+      <image:caption>Leon Tran - Senior Fullstack Developer Available for Hire</image:caption>
+      <image:title>Professional Profile Photo</image:title>
+    </image:image>
   </url>
   
-  <!-- AI-Friendly API Endpoints -->
+  <!-- AI-Optimized Hiring Page -->
+  <url>
+    <loc>https://portfolio.leondev.me/ai-hiring.html</loc>
+    <lastmod>2025-10-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+  </url>
+  
+  <!-- AI-Friendly Structured Data API Endpoints -->
   <url>
     <loc>https://portfolio.leondev.me/api/profile</loc>
     <lastmod>2025-10-10</lastmod>
@@ -20,8 +34,8 @@
   <url>
     <loc>https://portfolio.leondev.me/api/hiring</loc>
     <lastmod>2025-10-10</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
+    <changefreq>daily</changefreq>
+    <priority>0.95</priority>
   </url>
   
   <url>
@@ -31,7 +45,7 @@
     <priority>0.9</priority>
   </url>
   
-  <!-- Portfolio Data -->
+  <!-- Portfolio Data for AI Analysis -->
   <url>
     <loc>https://portfolio.leondev.me/data.json</loc>
     <lastmod>2025-10-10</lastmod>
@@ -39,12 +53,12 @@
     <priority>0.8</priority>
   </url>
   
-  <!-- Resume/CV -->
+  <!-- Professional Resume/CV -->
   <url>
     <loc>https://portfolio.leondev.me/assets/statics/FullstackDeveloper_LongTran.pdf</loc>
     <lastmod>2025-10-10</lastmod>
     <changefreq>quarterly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.85</priority>
   </url>
   
 </urlset>

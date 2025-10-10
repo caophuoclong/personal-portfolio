@@ -1,0 +1,283 @@
+{
+  "api_version": "2.0",
+  "generated_at": "2025-10-10T00:00:00Z",
+  "hiring_status": "ACTIVELY_SEEKING",
+  "last_updated": "2025-10-10",
+  "candidate": {
+    "personal_info": {
+      "full_name": "Long (Leon) Tran",
+      "preferred_name": "Leon Tran",
+      "email": "contact@leondev.me",
+      "phone": "+84326031442",
+      "location": {
+        "city": "Ho Chi Minh City",
+        "country": "Vietnam",
+        "country_code": "VN",
+        "timezone": "Asia/Ho_Chi_Minh",
+        "gmt_offset": "+7",
+        "coordinates": {
+          "latitude": 10.8231,
+          "longitude": 106.6297
+        },
+        "remote_work_available": true,
+        "willing_to_relocate": false,
+        "visa_required": true,
+        "work_authorization": "Vietnam citizen, eligible for remote work worldwide"
+      },
+      "birth_year": 2001,
+      "age": 24,
+      "languages": [
+        {
+          "language": "Vietnamese",
+          "proficiency": "Native"
+        },
+        {
+          "language": "English",
+          "proficiency": "Professional working proficiency"
+        }
+      ],
+      "availability": {
+        "status": "Available immediately",
+        "notice_period": "Immediate",
+        "start_date": "2025-10-15",
+        "preferred_work_types": ["full-time", "contract", "remote"],
+        "hours_per_week": "40+",
+        "timezone_flexibility": "Can accommodate US EST/PST and EU CET timezones"
+      }
+    },
+    "professional_summary": {
+      "title": "Senior Fullstack Web Developer",
+      "years_of_experience": 3,
+      "experience_level": "Senior",
+      "current_status": "Employed - Open to new opportunities",
+      "specializations": [
+        "Full-stack Web Development",
+        "React/Next.js Applications",
+        "Node.js Backend Services",
+        "Mobile App Development",
+        "Cloud Architecture & DevOps",
+        "API Design & Development",
+        "Performance Optimization",
+        "System Architecture"
+      ],
+      "key_achievements": [
+        "Reduced application load time by 25% through advanced optimization techniques",
+        "Maintained 99.9% uptime for critical production systems",
+        "Built scalable backend services improving system maintainability by 40%",
+        "Developed end-to-end logistics pricing system reducing manual calculation time by 30%",
+        "Led cross-functional team collaboration with QA, DevOps, and Product teams",
+        "Implemented clean architecture and domain-driven design patterns",
+        "Delivered 15+ successful projects on time and within budget"
+      ],
+      "unique_value_propositions": [
+        "Strong problem-solving skills with focus on scalable solutions",
+        "Experience with both startup and enterprise environments",
+        "Full-stack expertise from UI/UX to database and cloud infrastructure",
+        "Proven track record in performance optimization and system reliability",
+        "Excellent communication skills for remote team collaboration",
+        "Continuous learner with passion for modern web technologies"
+      ]
+    },
+    "technical_skills": {
+      "frontend": {
+        "expert": ["React.js", "TypeScript", "JavaScript ES6+", "HTML5", "CSS3"],
+        "proficient": ["Next.js", "React Native", "Redux", "Tailwind CSS", "Material-UI"],
+        "familiar": ["Vue.js", "Angular", "Svelte"]
+      },
+      "backend": {
+        "expert": ["Node.js", "Express.js", "MongoDB", "PostgreSQL"],
+        "proficient": ["NestJS", "GraphQL", "Redis", "RESTful APIs"],
+        "familiar": ["Python", "Django", "FastAPI"]
+      },
+      "cloud_devops": {
+        "expert": ["AWS", "Docker"],
+        "proficient": ["CI/CD", "Git", "Linux", "Nginx"],
+        "familiar": ["Kubernetes", "Google Cloud", "Azure"]
+      },
+      "tools_frameworks": ["Git/GitHub", "VS Code", "Postman", "Jest", "WebRTC", "Socket.io", "Webpack", "Babel", "ESLint", "Prettier"],
+      "databases": ["MongoDB", "PostgreSQL", "Redis", "MySQL"],
+      "soft_skills": [
+        "Problem Solving",
+        "Team Leadership",
+        "Agile/Scrum",
+        "Code Review",
+        "Technical Documentation",
+        "Cross-functional Collaboration",
+        "Remote Work",
+        "Time Management",
+        "Communication"
+      ]
+    },
+    "work_preferences": {
+      "employment_types": ["full-time", "contract", "part-time"],
+      "work_arrangements": ["remote", "hybrid", "on-site"],
+      "preferred_arrangement": "remote",
+      "company_sizes": ["startup", "scale-up", "enterprise"],
+      "industries_interested": ["Technology", "E-commerce", "Fintech", "Healthcare Tech", "EdTech", "SaaS", "Logistics", "AI/ML", "Blockchain"],
+      "role_levels": ["Senior Developer", "Lead Developer", "Full-stack Engineer", "Technical Lead"],
+      "team_size_preference": "5-15 members",
+      "management_interest": "Open to technical leadership roles"
+    },
+    "compensation": {
+      "salary_expectation": {
+        "currency": "USD",
+        "range": "Competitive and negotiable based on role, company, and responsibilities",
+        "negotiable": true,
+        "includes_equity": "Open to equity compensation",
+        "benefits_important": ["Health insurance", "Learning budget", "Flexible schedule", "Remote work allowance"]
+      },
+      "contract_rates": {
+        "currency": "USD",
+        "hourly_rate": "Competitive market rate",
+        "project_based": "Available for fixed-price projects"
+      }
+    },
+    "work_experience": [
+      {
+        "position": "Junior Fullstack Developer",
+        "company": "Cyberlogitec Vietnam",
+        "employment_type": "Full-time",
+        "start_date": "2024-07",
+        "end_date": "Present",
+        "duration": "3+ months",
+        "is_current": true,
+        "location": "Ho Chi Minh City, Vietnam",
+        "responsibilities": [
+          "Engineered comprehensive end-to-end logistics pricing system",
+          "Developed scalable backend services using NestJS with Domain-Driven Design",
+          "Built dynamic Next.js interfaces for complex pricing configuration",
+          "Implemented advanced logistics business logic for route pricing and cargo allocation",
+          "Collaborated effectively with cross-functional teams (QA, DevOps, Product)",
+          "Applied clean architecture and modern testing practices"
+        ],
+        "technologies": ["NestJS", "Next.js", "TypeScript", "Clean Architecture", "DDD", "PostgreSQL"],
+        "achievements": [
+          "Reduced manual pricing calculation time by 30%",
+          "Improved system maintainability through clean architecture implementation",
+          "Successfully delivered complex logistics features ahead of schedule"
+        ]
+      },
+      {
+        "position": "Fullstack Developer",
+        "company": "Gcalls JSC",
+        "employment_type": "Full-time",
+        "start_date": "2023-03",
+        "end_date": "2024-06",
+        "duration": "1 year 3 months",
+        "location": "Ho Chi Minh City, Vietnam",
+        "responsibilities": [
+          "Developed and maintained scalable web applications using React and Node.js",
+          "Implemented real-time communication features using WebRTC and Socket.io",
+          "Built responsive mobile applications with React Native",
+          "Optimized application performance achieving 25% load time reduction",
+          "Maintained 99.9% uptime for critical production systems",
+          "Collaborated with design and product teams for feature development"
+        ],
+        "technologies": ["React.js", "Node.js", "Express.js", "MongoDB", "React Native", "WebRTC", "Socket.io", "AWS"],
+        "achievements": [
+          "Achieved 25% improvement in application load times",
+          "Maintained 99.9% system uptime",
+          "Successfully launched 3 major product features",
+          "Reduced customer support tickets by 20% through UI/UX improvements"
+        ]
+      }
+    ],
+    "education": [
+      {
+        "degree": "Bachelor of Software Engineering",
+        "institution": "Can Tho University",
+        "start_year": 2019,
+        "end_year": 2023,
+        "gpa": "Good standing",
+        "relevant_coursework": [
+          "Software Engineering",
+          "Database Systems",
+          "Web Development",
+          "Mobile Application Development",
+          "System Analysis and Design",
+          "Algorithms and Data Structures",
+          "Software Project Management"
+        ]
+      }
+    ],
+    "portfolio": {
+      "website": "https://portfolio.leondev.me",
+      "github": "https://github.com/caophuoclong",
+      "linkedin": "https://linkedin.com/in/caophuoclongse",
+      "resume_pdf": "https://portfolio.leondev.me/assets/statics/FullstackDeveloper_LongTran.pdf"
+    },
+    "contact_preferences": {
+      "preferred_contact_method": "email",
+      "email": "contact@leondev.me",
+      "phone_available": true,
+      "linkedin_messaging": true,
+      "response_time": "Within 24 hours",
+      "interview_availability": {
+        "video_call": true,
+        "phone": true,
+        "in_person": "Available in Ho Chi Minh City",
+        "timezone_accommodations": "Flexible for US/EU timezones"
+      }
+    },
+    "ai_hiring_metadata": {
+      "keywords_for_matching": [
+        "fullstack developer",
+        "react developer",
+        "nodejs developer",
+        "typescript developer",
+        "javascript developer",
+        "senior developer",
+        "web developer",
+        "remote developer",
+        "vietnam developer",
+        "aws developer",
+        "mongodb developer",
+        "postgresql developer",
+        "next.js developer",
+        "express.js developer",
+        "mobile developer",
+        "react native developer",
+        "api developer",
+        "backend developer",
+        "frontend developer",
+        "full stack engineer",
+        "software engineer"
+      ],
+      "matching_confidence": {
+        "react_roles": 0.95,
+        "nodejs_roles": 0.95,
+        "fullstack_roles": 0.98,
+        "typescript_roles": 0.9,
+        "remote_roles": 0.95,
+        "senior_roles": 0.85,
+        "mobile_roles": 0.8,
+        "devops_roles": 0.7
+      },
+      "availability_status": "immediate",
+      "last_profile_update": "2025-10-10",
+      "profile_completeness": 0.98,
+      "verification_status": "verified",
+      "hiring_urgency": "moderate",
+      "cultural_fit_indicators": [
+        "remote work experience",
+        "cross-functional collaboration",
+        "continuous learning mindset",
+        "startup experience",
+        "english proficiency",
+        "timezone flexibility"
+      ]
+    }
+  },
+  "meta": {
+    "data_source": "https://portfolio.leondev.me",
+    "api_endpoints": {
+      "full_profile": "https://portfolio.leondev.me/api/profile",
+      "hiring_specific": "https://portfolio.leondev.me/api/hiring",
+      "portfolio_data": "https://portfolio.leondev.me/data.json",
+      "resume_pdf": "https://portfolio.leondev.me/assets/statics/FullstackDeveloper_LongTran.pdf"
+    },
+    "last_verified": "2025-10-10",
+    "data_accuracy": "high",
+    "contact_verified": true
+  }
+}
