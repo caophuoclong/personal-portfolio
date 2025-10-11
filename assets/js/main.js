@@ -11,6 +11,11 @@ import { initNavigation } from "./navigation.js";
 import { loadPortfolioData } from "./data-loader.js";
 import { downloadCV, openPDFViewer, closePDFViewer, initPDFViewer } from "./utils.js";
 
+// Make CV functions globally available immediately
+globalThis.downloadCV = downloadCV;
+globalThis.openPDFViewer = openPDFViewer;
+globalThis.closePDFViewer = closePDFViewer;
+
 /**
  * Initialize all components when DOM is ready
  */
@@ -27,9 +32,4 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Initialize PDF viewer
   initPDFViewer();
-
-  // Make CV functions globally available
-  globalThis.downloadCV = downloadCV;
-  globalThis.openPDFViewer = openPDFViewer;
-  globalThis.closePDFViewer = closePDFViewer;
 });
