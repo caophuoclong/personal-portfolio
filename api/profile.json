@@ -1,6 +1,6 @@
 {
   "api_version": "1.0",
-  "generated_at": "2025-10-10T00:00:00Z",
+  "generated_at": "2025-10-11T00:00:00Z",
   "candidate": {
     "personal_info": {
       "full_name": "Long (Leon) Tran",
@@ -37,7 +37,7 @@
         "employment_type": "Full-time",
         "start_date": "2024-07",
         "end_date": "Present",
-        "duration_months": 3,
+        "duration_months": 4,
         "is_current": true,
         "responsibilities": [
           "Engineered end-to-end logistics pricing system",
@@ -169,16 +169,16 @@
         { "name": "Redis", "proficiency": "Intermediate", "years_experience": 1 }
       ],
       "cloud_and_devops": [
-        { "name": "AWS", "proficiency": "Intermediate", "years_experience": 2 },
-        { "name": "Docker", "proficiency": "Intermediate", "years_experience": 2 },
-        { "name": "Cloudflare", "proficiency": "Intermediate", "years_experience": 1 },
+        { "name": "AWS", "proficiency": "Intermediate", "years_experience": 1 },
+        { "name": "Docker", "proficiency": "Intermediate", "years_experience": 3 },
+        { "name": "Cloudflare", "proficiency": "Intermediate", "years_experience": 3 },
         { "name": "HAProxy", "proficiency": "Intermediate", "years_experience": 1 }
       ],
       "tools_and_frameworks": [
         { "name": "Git", "proficiency": "Expert", "years_experience": 3 },
         { "name": "WebRTC", "proficiency": "Intermediate", "years_experience": 1 },
         { "name": "Socket.io", "proficiency": "Advanced", "years_experience": 2 },
-        { "name": "Prisma ORM", "proficiency": "Advanced", "years_experience": 2 }
+        { "name": "Type ORM", "proficiency": "Advanced", "years_experience": 3 }
       ]
     },
     "soft_skills": [
@@ -241,7 +241,7 @@
       "resume_pdf": "https://portfolio.leondev.me/assets/statics/FullstackDeveloper_LongTran.pdf"
     },
     "hiring_metadata": {
-      "last_updated": "2025-10-10",
+      "last_updated": "2025-10-11",
       "profile_completeness": "100%",
       "verification_status": "Self-reported",
       "background_check": "Available upon request",

@@ -22,7 +22,7 @@ export class Application {
   }
 
   private setupRoutes(): void {
-    const routeGroups = createAllRoutes(this.hotReloadController);
+    const routeGroups = createAllRoutes(this.hotReloadController, this.isDev);
 
     for (const group of routeGroups) {
       this.router.addRouteGroup(group);

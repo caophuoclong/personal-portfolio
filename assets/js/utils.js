@@ -70,3 +70,54 @@ export function downloadCV() {
   link.click();
   document.body.removeChild(link);
 }
+
+/**
+ * Open PDF Viewer Modal
+ */
+export function openPDFViewer() {
+  const modal = document.getElementById("pdfViewerModal");
+  const iframe = document.getElementById("pdfViewerFrame");
+
+  // Set the PDF source
+  iframe.src = "./assets/statics/FullstackDeveloper_LongTran.pdf";
+
+  // Show the modal
+  modal.classList.add("active");
+  document.body.style.overflow = "hidden"; // Prevent background scrolling
+}
+
+/**
+ * Close PDF Viewer Modal
+ */
+export function closePDFViewer() {
+  const modal = document.getElementById("pdfViewerModal");
+  const iframe = document.getElementById("pdfViewerFrame");
+
+  // Hide the modal
+  modal.classList.remove("active");
+  document.body.style.overflow = "auto"; // Restore scrolling
+
+  // Clear the iframe source to stop loading
+  iframe.src = "";
+}
+
+/**
+ * Initialize PDF Viewer Event Listeners
+ */
+export function initPDFViewer() {
+  const modal = document.getElementById("pdfViewerModal");
+
+  // Close modal when clicking outside the content
+  modal.addEventListener("click", function (e) {
+    if (e.target === modal) {
+      closePDFViewer();
+    }
+  });
+
+  // Close modal with Escape key
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "Escape" && modal.classList.contains("active")) {
+      closePDFViewer();
+    }
+  });
+}

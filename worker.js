@@ -1,84 +1,136 @@
-export default {
-  fetch(request, _env, _ctx) {
-    const url = new URL(request.url);
-    
-    // Health check endpoint
-    if (url.pathname === '/health') {
-      return new Response('OK', { 
-        status: 200,
-        headers: { 'Content-Type': 'text/plain' }
-      });
-    }
-    
-    // Status endpoint
-    if (url.pathname === '/status') {
-      return new Response(JSON.stringify({
-        status: 'active',
-        timestamp: new Date().toISOString(),
-        handlers: ['email', 'fetch']
-      }), {
-        status: 200,
-        headers: { 'Content-Type': 'application/json' }
-      });
-    }
-    
-    // Default response for other requests
-    return new Response('Cloudflare Email Worker', {
-      status: 200,
-      headers: { 'Content-Type': 'text/plain' }
-    });
-  },
+function parseEmailBody(rawContent) {
+  try {
+    console.log(`📧 Parsing email body (${rawContent.length} chars)...`);
 
-  async email(message, env, _ctx) {
+    // First, try to find MIME boundaries in headers or content
+    const boundaryMatch = rawContent.match(/boundary[=:][\s]*["']?([^"'\s;]+)/i);
+
+    if (boundaryMatch) {
+      const boundary = boundaryMatch[1];
+      console.log(`📧 Found MIME boundary: ${boundary}`);
+
+      // Split by boundary and find text/plain parts
+      const parts = rawContent.split(`--${boundary}`);
+
+      for (const part of parts) {
+        // Look for text/plain content type
+        if (part.includes("Content-Type: text/plain")) {
+          // Find the actual content after headers (double line break)
+          const contentMatch = part.match(/\r?\n\r?\n([\s\S]*?)$/);
+          if (contentMatch) {
+            let content = contentMatch[1].trim();
+            // Remove any trailing boundary markers or -- endings
+            content = content.replace(/\r?\n--.*$/, "").trim();
+            if (content) {
+              console.log(`✅ Extracted plain text content: "${content}"`);
+              return content;
+            }
+          }
+        }
+      }
+    }
+
+    // Try to detect boundary from the content itself (like your example)
+    const inlineBoundaryMatch = rawContent.match(/^--([a-zA-Z0-9]+)/);
+    if (inlineBoundaryMatch) {
+      const boundary = inlineBoundaryMatch[1];
+      console.log(`📧 Found inline boundary: ${boundary}`);
+
+      // Look for text/plain section
+      const textPlainMatch = rawContent.match(/Content-Type:\s*text\/plain[^\r\n]*\r?\n(?:[^\r\n]*\r?\n)*\r?\n([\s\S]*?)(?=\r?\n--|\r?\n\.\r?\n|$)/i);
+      if (textPlainMatch) {
+        const content = textPlainMatch[1].trim();
+        console.log(`✅ Extracted inline plain text: "${content}"`);
+        return content;
+      }
+    }
+
+    // Fallback: try to extract content after first double line break
+    const simpleMatch = rawContent.match(/\r?\n\r?\n([\s\S]*?)(?=\r?\n--|\r?\n\.\r?\n|$)/);
+    if (simpleMatch) {
+      let content = simpleMatch[1].trim();
+      // Clean up common email artifacts
+      content = content
+        .replace(/--[a-zA-Z0-9]+.*$/gm, "") // Remove boundary lines
+        .replace(/Content-Type:.*$/gm, "") // Remove content-type lines
+        .replace(/Content-Transfer-Encoding:.*$/gm, "") // Remove encoding lines
+        .replace(/^\s*\r?\n/gm, "") // Remove empty lines at start
+        .trim();
+
+      if (content) {
+        console.log(`✅ Extracted content (fallback): "${content}"`);
+        return content;
+      }
+    }
+
+    // Last resort: return raw content with some cleanup
+    console.warn("⚠️ Could not parse email body properly, returning cleaned raw content");
+    const cleanedContent = rawContent
+      .replace(/--[a-zA-Z0-9]+.*$/gm, "")
+      .replace(/Content-Type:.*$/gm, "")
+      .replace(/Content-Transfer-Encoding:.*$/gm, "")
+      .replace(/^\s*\r?\n/gm, "")
+      .trim();
+
+    console.log(`⚠️ Returning cleaned content: "${cleanedContent}"`);
+    return cleanedContent;
+  } catch (error) {
+    console.error("❌ Error parsing email body:", error);
+    return rawContent; // Return raw content as fallback
+  }
+}
+
+export default {
+  async email(message, _env, _ctx) {
     try {
       console.log("📧 Processing incoming email...");
-      console.log("📧 Message from:", message.from);
-      console.log("📧 Message to:", message.to);
+
+      // Validate required message properties
+      if (!message.from || !message.to) {
+        message.setReject("Missing required From or To address");
+        return;
+      }
+
+      // Read the raw email stream
+      let rawContent = "";
+      let emailBody = "";
+
+      try {
+        // Read the raw stream
+        if (message.raw) {
+          const reader = message.raw.getReader();
+          const decoder = new TextDecoder();
+
+          while (true) {
+            const { done, value } = await reader.read();
+            if (done) break;
+            rawContent += decoder.decode(value, { stream: true });
+          }
+
+          // Parse email content from MIME format
+          emailBody = parseEmailBody(rawContent);
+        }
+      } catch (error) {
+        console.warn("⚠️ Error reading raw email content:", error);
+      }
 
       // Extract email content and metadata
-      let body = "";
-      let html = null;
-      
-      try {
-        body = await message.text() || "";
-        console.log("📧 Email body extracted, length:", body.length);
-      } catch (e) {
-        console.error("❌ Failed to extract email text:", e);
-      }
-      
-      try {
-        html = await message.raw();
-        console.log("📧 Email HTML extracted");
-      } catch (e) {
-        console.log("📧 No HTML content or failed to extract HTML:", e.message);
-        html = null;
-      }
-
       const emailData = {
         from: message.from,
         to: message.to,
         subject: message.headers.get("subject") || "No Subject",
-        body: body,
-        html: html,
+        body: emailBody,
+        rawContent: rawContent,
+        rawSize: message.rawSize || 0,
         headers: Object.fromEntries(message.headers.entries()),
         timestamp: Date.now(),
         messageId: message.headers.get("message-id") || `worker-${Date.now()}`,
       };
 
-      console.log("📧 Extracted email data:", JSON.stringify({
-        from: emailData.from,
-        to: emailData.to,
-        subject: emailData.subject,
-        bodyLength: emailData.body.length,
-        timestamp: emailData.timestamp
-      }));
-
-      // Get configuration from environment variables
-      const webhookUrl = env.WEBHOOK_URL || "https://portfolio.leondev.me";
-      const webhookToken = env.WEBHOOK_TOKEN;
-
-      console.log("🔧 Using webhook URL:", webhookUrl);
-      console.log("🔧 Token configured:", !!webhookToken);
+      // Forward to the main server's webhook endpoint
+      const webhookUrl = "https://portfolio.leondev.me";
+      const webhookToken = "2uL3xHdc7bBzDN9FQgCbQTDC8aH6vixRKMffUnDDLXBd29oBssFckgtbx";
+      const _forwardToEmail = "caophuoclong.se@gmail.com"; // Optional: forward to a specific email address
 
       if (!webhookUrl) {
         throw new Error("WEBHOOK_URL environment variable is required");
@@ -104,24 +156,26 @@ export default {
 
       if (!response.ok) {
         const errorText = await response.text();
-        throw new Error(`Webhook failed: ${response.status} - ${errorText}`);
+        console.error(`❌ Webhook failed: ${response.status} - ${errorText}`);
+
+        // Reject the email with a proper SMTP error
+        message.setReject(`Server error: Unable to process email (${response.status})`);
+        return;
       }
 
       const result = await response.json();
       console.log("✅ Email processed successfully:", result);
 
-      return new Response("Email processed successfully", {
-        status: 200,
-        headers: { "Content-Type": "text/plain" },
-      });
+      // Email was processed successfully - no response needed for email handler
     } catch (error) {
       console.error("❌ Error processing email:", error);
 
-      // Return error response but don't fail the email delivery
-      return new Response(`Error processing email: ${error.message}`, {
-        status: 500,
-        headers: { "Content-Type": "text/plain" },
-      });
+      // Reject the email with proper error message
+      try {
+        message.setReject(`Processing error: ${error.message}`);
+      } catch (rejectError) {
+        console.error("❌ Failed to reject email:", rejectError);
+      }
     }
   },
 };

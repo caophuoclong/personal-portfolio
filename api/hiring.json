@@ -1,8 +1,8 @@
 {
   "api_version": "2.0",
-  "generated_at": "2025-10-10T00:00:00Z",
+  "generated_at": "2025-10-11T00:00:00Z",
   "hiring_status": "ACTIVELY_SEEKING",
-  "last_updated": "2025-10-10",
+  "last_updated": "2025-10-11",
   "candidate": {
     "personal_info": {
       "full_name": "Long (Leon) Tran",
@@ -33,22 +33,22 @@
         },
         {
           "language": "English",
-          "proficiency": "Professional working proficiency"
+          "proficiency": "Working proficiency"
         }
       ],
       "availability": {
         "status": "Available immediately",
         "notice_period": "Immediate",
-        "start_date": "2025-10-15",
-        "preferred_work_types": ["full-time", "contract", "remote"],
+        "start_date": "2025-10-16",
+        "preferred_work_types": ["full-time", "contract", "remote", "freelance"],
         "hours_per_week": "40+",
         "timezone_flexibility": "Can accommodate US EST/PST and EU CET timezones"
       }
     },
     "professional_summary": {
-      "title": "Senior Fullstack Web Developer",
+      "title": "Mid Fullstack Web Developer",
       "years_of_experience": 3,
-      "experience_level": "Senior",
+      "experience_level": "Mid-level",
       "current_status": "Employed - Open to new opportunities",
       "specializations": [
         "Full-stack Web Development",
@@ -114,7 +114,7 @@
       "preferred_arrangement": "remote",
       "company_sizes": ["startup", "scale-up", "enterprise"],
       "industries_interested": ["Technology", "E-commerce", "Fintech", "Healthcare Tech", "EdTech", "SaaS", "Logistics", "AI/ML", "Blockchain"],
-      "role_levels": ["Senior Developer", "Lead Developer", "Full-stack Engineer", "Technical Lead"],
+      "role_levels": ["Mid Developer", "Full-stack Engineer"],
       "team_size_preference": "5-15 members",
       "management_interest": "Open to technical leadership roles"
     },
@@ -139,7 +139,7 @@
         "employment_type": "Full-time",
         "start_date": "2024-07",
         "end_date": "Present",
-        "duration": "3+ months",
+        "duration": "4 months (July 2024 - Present)",
         "is_current": true,
         "location": "Ho Chi Minh City, Vietnam",
         "responsibilities": [
@@ -254,7 +254,7 @@
         "devops_roles": 0.7
       },
       "availability_status": "immediate",
-      "last_profile_update": "2025-10-10",
+      "last_profile_update": "2025-10-11",
       "profile_completeness": 0.98,
       "verification_status": "verified",
       "hiring_urgency": "moderate",
@@ -276,7 +276,7 @@
       "portfolio_data": "https://portfolio.leondev.me/data.json",
       "resume_pdf": "https://portfolio.leondev.me/assets/statics/FullstackDeveloper_LongTran.pdf"
     },
-    "last_verified": "2025-10-10",
+    "last_verified": "2025-10-11",
     "data_accuracy": "high",
     "contact_verified": true
   }

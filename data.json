@@ -8,7 +8,7 @@
     "location": "Ho Chi Minh City, Vietnam",
     "avatar": "./assets/images/my-avatar.png",
     "aboutText": [
-      "I'm a passionate Fullstack Web Developer currently based in Ho Chi Minh City, Vietnam, with over 3 years of professional experience building scalable web applications and mobile solutions. Currently working as a Junior Fullstack Web Developer at Gcalls JSC, where I focus on improving user satisfaction and system performance using modern technologies like React, TypeScript, Node.js, and cloud services.",
+      "I'm a passionate Fullstack Web Developer currently based in Ho Chi Minh City, Vietnam, with over 3 years of professional experience building scalable web applications and mobile solutions. Currently working as a Junior Fullstack Developer at Cyberlogitec Vietnam, where I focus on building end-to-end logistics pricing systems and scalable backend services using modern technologies like NestJS, Next.js, TypeScript, and cloud services.",
       "My technical expertise spans across the entire development stack - from creating intuitive user interfaces with React.js and TypeScript to building robust backend systems with Node.js, Express.js, and databases like MongoDB and PostgreSQL. I've successfully reduced application load times by 25% through optimization techniques and maintained 99.9% uptime for critical systems using load balancing and cloud infrastructure.",
       "What drives me is solving complex technical challenges while delivering exceptional user experiences. I have hands-on experience with real-time applications using WebRTC and Socket.io, mobile development with React Native, and DevOps practices with AWS and Docker. I'm constantly learning new technologies and best practices to stay at the forefront of web development, with a particular interest in performance optimization, scalable architecture, and emerging web technologies."
     ]
@@ -230,7 +230,7 @@
       },
       {
         "name": "TailwindCSS",
-        "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-plain.svg",
+        "icon": "https://cdn.brandfetch.io/idMNEQh7-0/theme/dark/symbol.svg?c=1bxid64Mup7aczewSAYMX&t=1687779047045",
         "level": 88
       }
     ],
@@ -262,7 +262,7 @@
       },
       {
         "name": "NestJS",
-        "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nestjs/nestjs-plain.svg",
+        "icon": "https://cdn.brandfetch.io/idykQnbEJm/w/820/h/292/theme/dark/logo.png?c=1bxid64Mup7aczewSAYMX&t=1758978760920",
         "level": 85
       },
       {
@@ -320,8 +320,8 @@
         "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kubernetes/kubernetes-plain.svg"
       },
       {
-        "name": "Jenkins",
-        "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jenkins/jenkins-original.svg"
+        "name": "Argo CD",
+        "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/argocd/argocd-original.svg"
       }
     ],
     "tools": [
@@ -359,11 +359,11 @@
       },
       {
         "name": "LaunchDarkly",
-        "icon": "https://www.vectorlogo.zone/logos/launchdarkly/launchdarkly-icon.svg"
+        "icon": "https://cdn.brandfetch.io/id_dPHt38G/theme/dark/symbol.svg?c=1bxid64Mup7aczewSAYMX&t=1713393233506"
       },
       {
-        "name": "Prisma",
-        "icon": "https://www.vectorlogo.zone/logos/prismaio/prismaio-icon.svg"
+        "name": "Type ORM",
+        "icon": "https://cdn.brandfetch.io/id_PKfTSw5/w/400/h/400/theme/dark/icon.jpeg?c=1bxid64Mup7aczewSAYMX&t=1758419799530"
       }
     ]
   },

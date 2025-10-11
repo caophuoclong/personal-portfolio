@@ -4,7 +4,9 @@
 ![GitHub stars](https://img.shields.io/github/stars/caophuoclong/personal-portfolio?style=social)
 ![GitHub forks](https://img.shields.io/github/forks/caophuoclong/personal-portfolio?style=social)
 
-A modern, fully responsive personal portfolio website showcasing professional experience, skills, and projects. Built with HTML, CSS, JavaScript, and powered by Deno for enhanced development experience with hot reload, dynamic data loading, and AI-optimized content for recruitment systems.
+A modern, fully responsive personal portfolio website for **Long (Leon) Tran** - a passionate **Fullstack Web Developer** with 3+ years of professional experience in building scalable web applications and mobile solutions. Currently working as a **Junior Fullstack Developer at Cyberlogitec Vietnam**, specializing in end-to-end logistics pricing systems and scalable backend services.
+
+Built with HTML, CSS, JavaScript, and powered by Deno for enhanced development experience with hot reload, dynamic data loading, AI-optimized content for recruitment systems, and **integrated PDF viewer** for CV viewing.
 
 ## Demo
 
@@ -63,9 +65,11 @@ deno run --allow-net --allow-read server.ts
 The server will start on `http://localhost:8000` and provides:
 
 - Static file serving for all portfolio assets
-- API endpoint at `/api/data` for portfolio data
+- API endpoints at `/api/data` and `/api/profile` for portfolio data
+- **PDF Viewer** - Integrated CV viewer with download functionality
 - Automatic JSON data loading with fallback support
 - **Hot Reload** - Automatic browser refresh when files change (dev mode only)
+- **AI-Optimized** - Enhanced metadata for recruitment systems
 
 ### Hot Reload Features
 
@@ -91,10 +95,18 @@ Edit `data.json` to update your:
 
 - Personal details (name, title, contact info)
 - About section and professional summary
-- Skills and technologies
+- **Skills and technologies** (React.js, Node.js, TypeScript, NestJS, Next.js, MongoDB, PostgreSQL, AWS, Docker, Kubernetes, Argo CD)
 - Work experience and projects
 - Education and certifications
 - Social media links
+
+**Current Tech Stack Featured:**
+
+- **Frontend**: React.js, Next.js, TypeScript, TailwindCSS
+- **Backend**: Node.js, Express.js, NestJS, GraphQL
+- **Databases**: MongoDB, PostgreSQL, Redis
+- **DevOps**: Docker, AWS, Kubernetes, Argo CD
+- **Other**: Socket.io, WebRTC, Prisma, React Native
 
 #### 2. Visual Assets
 
@@ -129,7 +141,7 @@ Update `ai-hiring.html` for better AI recruitment visibility:
 
 ```text
 personal-portfolio/
-├── 📄 index.html              # Main portfolio page
+├── 📄 index.html              # Main portfolio page with PDF viewer
 ├── 🤖 ai-hiring.html          # AI-optimized hiring page
 ├── 📊 data.json               # Portfolio data configuration
 ├── 🦕 server.ts               # Deno development server
@@ -137,28 +149,36 @@ personal-portfolio/
 ├── 🌐 sitemap.xml             # Search engine sitemap
 ├── 🤖 robots.txt              # Web crawler instructions
 ├── api/
-│   └── 📋 profile.json        # API data endpoint
+│   ├── 📋 profile.json        # Professional profile API
+│   └── 🎯 hiring.json         # AI hiring-optimized data
 ├── assets/
 │   ├── css/
-│   │   └── 🎨 style.css       # Main stylesheet
+│   │   └── 🎨 style.css       # Main stylesheet + PDF viewer styles
 │   ├── js/
 │   │   ├── 🔄 hot-reload.js   # Client-side hot reload
-│   │   └── ⚡ script.js       # Main functionality
-│   ├── images/                # All visual assets
+│   │   ├── ⚡ main.js         # Main functionality controller
+│   │   ├── 🛠️ utils.js        # Utility functions + PDF viewer
+│   │   ├── 📱 sidebar.js      # Sidebar navigation
+│   │   ├── 🎯 navigation.js   # Page navigation
+│   │   ├── 📊 data-loader.js  # Dynamic data loading
+│   │   └── 📞 contact-form.js # Contact form handler
+│   ├── images/                # Visual assets & project screenshots
 │   └── statics/
-│       └── 📄 *.pdf           # Resume/CV files
+│       └── 📄 FullstackDeveloper_LongTran.pdf  # Resume/CV
 ```
 
 ## API Endpoints
 
 The Deno server provides the following endpoints:
 
-- `GET /` - Main portfolio page
-- `GET /ai-hiring.html` - AI-optimized hiring page
+- `GET /` - Main portfolio page with integrated PDF viewer
+- `GET /ai-hiring.html` - AI-optimized hiring page for recruitment systems
 - `GET /api/data` - Portfolio data JSON API
-- `GET /api/profile.json` - Profile data endpoint
-- `GET /assets/*` - Static file serving
-- `WebSocket /ws` - Hot reload connection (dev mode)
+- `GET /api/profile.json` - Professional profile data endpoint
+- `GET /api/hiring.json` - AI hiring-optimized data with enhanced metadata
+- `GET /assets/statics/FullstackDeveloper_LongTran.pdf` - Resume/CV file
+- `GET /assets/*` - Static file serving (CSS, JS, images)
+- `WebSocket /ws` - Hot reload connection (dev mode only)
 
 ## Deployment
 
@@ -189,14 +209,35 @@ EXPOSE 8000
 CMD ["deno", "run", "--allow-net", "--allow-read", "server.ts"]
 ```
 
+## Recent Updates
+
+**October 2025:**
+
+- ✅ **PDF Viewer Integration** - Interactive CV viewer with download functionality
+- ✅ **Enhanced API Endpoints** - Added `/api/hiring.json` for AI recruitment systems
+- ✅ **Updated Tech Stack** - Added Argo CD, NestJS, and latest technologies
+- ✅ **Current Employment** - Updated to reflect position at Cyberlogitec Vietnam
+- ✅ **Mobile Optimization** - Improved responsive design for PDF viewer
+
+## Features
+
+- 📱 **Fully Responsive** - Works perfectly on desktop, tablet, and mobile
+- 🎯 **PDF Viewer** - Integrated CV viewer with download functionality
+- 🤖 **AI-Optimized** - Enhanced metadata for recruitment systems
+- ⚡ **Hot Reload** - Real-time development with automatic browser refresh
+- 🎨 **Modern Design** - Clean, professional UI with smooth animations
+- 📊 **Dynamic Data** - JSON-driven content for easy updates
+- 🔍 **SEO Friendly** - Optimized for search engines and social sharing
+
 ## Get in Touch
 
-For questions about this portfolio template or to connect professionally:
+**Currently available for new opportunities!**
 
 - 📧 Email: [contact@leondev.me](mailto:contact@leondev.me)
 - 💼 LinkedIn: [linkedin.com/in/caophuoclongse](https://linkedin.com/in/caophuoclongse)
 - 🐙 GitHub: [github.com/caophuoclong](https://github.com/caophuoclong)
 - 🌐 Portfolio: [portfolio.leondev.me](https://portfolio.leondev.me)
+- 📍 Location: Ho Chi Minh City, Vietnam (Remote work available)
 
 ## License
 

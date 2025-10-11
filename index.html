@@ -424,9 +424,9 @@
         <article class="resume" data-page="resume" id="cv-root">
           <header>
             <h2 class="h2 article-title">Resume</h2>
-            <button class="download-cv-btn" onclick="downloadCV()">
-              <ion-icon name="download-outline"></ion-icon>
-              Download CV
+            <button class="download-cv-btn" onclick="openPDFViewer()">
+              <ion-icon name="eye-outline"></ion-icon>
+              View CV
             </button>
           </header>
 
@@ -608,6 +608,34 @@
         </article>
       </div>
     </main>
+
+    <!--
+    - PDF Viewer Modal
+  -->
+    <div class="pdf-viewer-overlay" id="pdfViewerModal">
+      <div class="pdf-viewer-container">
+        <div class="pdf-viewer-header">
+          <h3 class="pdf-viewer-title">Leon Tran - Fullstack Developer CV</h3>
+          <div class="pdf-viewer-actions">
+            <button class="pdf-action-btn download-btn" onclick="downloadCV()" title="Download CV">
+              <ion-icon name="download-outline"></ion-icon>
+              <span>Download CV</span>
+            </button>
+            <button class="pdf-action-btn close-btn" onclick="closePDFViewer()" title="Close Viewer">
+              <ion-icon name="close-outline"></ion-icon>
+            </button>
+          </div>
+        </div>
+        <div class="pdf-viewer-content">
+          <iframe id="pdfViewerFrame" src="" width="100%" height="100%" frameborder="0">
+            <p>
+              Your browser does not support PDFs.
+              <a href="./assets/statics/FullstackDeveloper_LongTran.pdf" target="_blank">Click here to download the PDF</a>.
+            </p>
+          </iframe>
+        </div>
+      </div>
+    </div>
 
     <!--
     - custom js link (modular)

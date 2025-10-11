@@ -32,6 +32,11 @@ export class KVStore {
     this.kv = kv;
   }
 
+  // Expose the underlying KV store for advanced operations (dev only)
+  public getKV(): Deno.Kv {
+    return this.kv;
+  }
+
   // Email storage methods
   async storeEmail(email: Omit<EmailMessage, "id" | "timestamp">): Promise<string> {
     const id = crypto.randomUUID();
@@ -234,6 +239,14 @@ export async function getKVStore(): Promise<KVStore> {
 class MockKVStore {
   private emails: Map<string, EmailMessage> = new Map();
   private contacts: Map<string, ContactMessage> = new Map();
+  private mockEntries: Map<string, unknown> = new Map();
+
+  // Mock KV interface for development - limited implementation
+  getKV(): Deno.Kv {
+    // For mock store, we'll throw an error since it's not a real KV store
+    // The KV viewer controller will handle this gracefully
+    throw new Error("Mock KV store does not support direct KV access. Use real Deno KV for development.");
+  }
 
   storeEmail(email: Omit<EmailMessage, "id" | "timestamp">): Promise<string> {
     const id = crypto.randomUUID();
