@@ -169,7 +169,6 @@
         { "name": "Redis", "proficiency": "Intermediate", "years_experience": 1 }
       ],
       "cloud_and_devops": [
-        { "name": "AWS", "proficiency": "Intermediate", "years_experience": 1 },
         { "name": "Docker", "proficiency": "Intermediate", "years_experience": 3 },
         { "name": "Cloudflare", "proficiency": "Intermediate", "years_experience": 3 },
         { "name": "HAProxy", "proficiency": "Intermediate", "years_experience": 1 }
@@ -203,10 +202,6 @@
       {
         "service": "API Development",
         "description": "RESTful APIs and GraphQL services with robust authentication, database integration, and scalable architecture"
-      },
-      {
-        "service": "DevOps & Cloud",
-        "description": "Deployment automation, containerization with Docker, and cloud infrastructure management on AWS"
       }
     ],
     "job_preferences": {

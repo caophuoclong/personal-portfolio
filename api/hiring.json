@@ -173,7 +173,7 @@
           "Maintained 99.9% uptime for critical production systems",
           "Collaborated with design and product teams for feature development"
         ],
-        "technologies": ["React.js", "Node.js", "Express.js", "MongoDB", "React Native", "WebRTC", "Socket.io", "AWS"],
+        "technologies": ["React.js", "Node.js", "Express.js", "MongoDB", "React Native", "WebRTC", "Socket.io"],
         "achievements": [
           "Achieved 25% improvement in application load times",
           "Maintained 99.9% system uptime",
@@ -230,7 +230,6 @@
         "web developer",
         "remote developer",
         "vietnam developer",
-        "aws developer",
         "mongodb developer",
         "postgresql developer",
         "next.js developer",
